@@ -27,12 +27,6 @@ class UserCollection extends ResourceCollection
             'middle_name' => 'middle_name',
             'last_name' => 'last_name',
             'email' => 'email',
-            'title' => 'title',
-            'organization_code' => 'organization_code',
-            'is_disabled' => 'is_disabled',
-            'disable_reason' => 'disable_reason',
-            'disabled_at' => 'disabled_at',
-            'disabling_user_id' => 'disabling_user_id',
         ];
 
         return isset($attribute[$index]) ? $attribute[$index] : null;
@@ -46,12 +40,6 @@ class UserCollection extends ResourceCollection
             'middle_name' => 'middle_name',
             'last_name' => 'last_name',
             'email' => 'email',
-            'title' => 'title',
-            'organization_code' => 'organization_code',
-            'is_disabled' => 'is_disabled',
-            'disable_reason' => 'disable_reason',
-            'disabled_at' => 'disabled_at',
-            'disabling_user_id' => 'disabling_user_id',
         ];
 
         return isset($attribute[$index]) ? $attribute[$index] : null;
