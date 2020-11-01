@@ -15,6 +15,13 @@ class CreateServiceRatesTable extends Migration
     {
         Schema::create('service_rates', function (Blueprint $table) {
             $table->id();
+            $table->string('type')->nullable();
+            $table->double('rate', 13, 2)->default(0);
+            $table->double('cap_max_rate', 13, 2)->default(0);
+            $table->double('cap_min_rate', 13, 2)->default(0);
+            $table->double('discount_amount', 13, 2)->default(0);
+            $table->double('discount_percentage', 13, 2)->default(0);
+            $table->double('cap', 13, 2)->default(0);
             $table->timestamps();
         });
     }
