@@ -18,13 +18,13 @@ class CreateOrdersTable extends Migration
             
             $table->string('identifier')->nullable();
             $table->foreignId('user_id')->constrained('users')->nullable();
+            $table->double('amount',13,2)->default(0);
+            $table->double('rydecoin',13,2)->default(0);
             $table->integer('orderable_id')->nullable();
             $table->string('orderable_type')->nullable();
             $table->integer('dispatch_id')->nullable();
             $table->string('dispatch_status')->default('pending')->nullable();
-            $table->string('payment_method')->nullable();
             $table->string('note')->nullable();
-
             $table->softDeletes();
             $table->timestamps();
         });

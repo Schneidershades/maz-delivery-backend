@@ -15,7 +15,8 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('current_rydecoin_rate')->nullable();
+            $table->string('type')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }

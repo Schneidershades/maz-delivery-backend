@@ -15,9 +15,10 @@ class CreateLocalDispatchesTable extends Migration
     {
         Schema::create('local_dispatches', function (Blueprint $table) {
             $table->id();
-            $table->string('delivery_type')->nullable();
-            $table->string('delivery_time')->nullable();
-            $table->string('delivery_date')->nullable();
+            $table->foreignId('category_id')->constrained('categories')->nullable();
+            $table->integer('quantity')->nullable();
+            $table->integer('weight')->nullable();
+            $table->string('note')->nullable();
             $table->timestamps();
         });
     }
