@@ -13,6 +13,910 @@
         "version": "1.0.0"
     },
     "paths": {
+        "/api/v1/address": {
+            "get": {
+                "tags": [
+                    "address"
+                ],
+                "summary": "Get All Address",
+                "description": "Get All Address",
+                "operationId": "addressLists",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "address"
+                ],
+                "summary": "Post New Address",
+                "description": "Post New Address",
+                "operationId": "addressCreateAddress",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddressCreateFormRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/address/{id}": {
+            "get": {
+                "tags": [
+                    "address"
+                ],
+                "summary": "Show an Address",
+                "description": "Show an Address",
+                "operationId": "addressDetails",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Address ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "address"
+                ],
+                "summary": "Update an Address",
+                "description": "Update an Address",
+                "operationId": "addressUpdateAddress",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Address ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddressUpdateFormRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "address"
+                ],
+                "summary": "Delete an Address",
+                "description": "Delete an Address",
+                "operationId": "addressDeleteAddress",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Address ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/bank": {
+            "get": {
+                "tags": [
+                    "bank"
+                ],
+                "summary": "Get All Bank",
+                "description": "Get All Bank",
+                "operationId": "bankLists",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "bank"
+                ],
+                "summary": "Post New Bank",
+                "description": "Post New Bank",
+                "operationId": "bankCreate",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BankCreateFormRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/bank/{id}": {
+            "get": {
+                "tags": [
+                    "bank"
+                ],
+                "summary": "Show an Bank",
+                "description": "Show an Bank",
+                "operationId": "bankDetails",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Bank ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "bank"
+                ],
+                "summary": "Update an Bank",
+                "description": "Update an Bank",
+                "operationId": "bankUpdate",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Bank ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BankUpdateFormRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "bank"
+                ],
+                "summary": "Delete an Bank",
+                "description": "Delete an Bank",
+                "operationId": "bankDelete",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Bank ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/bank-details": {
+            "get": {
+                "tags": [
+                    "bankDetails"
+                ],
+                "summary": "Get All Bank Details",
+                "description": "Get All Bank Details",
+                "operationId": "bankdetailsLists",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "bankDetails"
+                ],
+                "summary": "Post New Bank Details",
+                "description": "Post New Bank Details",
+                "operationId": "bankDetailsCreate",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BankDetailCreateFormRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/bank-details/{id}": {
+            "get": {
+                "tags": [
+                    "bankDetails"
+                ],
+                "summary": "Show an Bank Details",
+                "description": "Show an Bank Details",
+                "operationId": "bankDetailsDetails",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Bank Detail ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "bankDetails"
+                ],
+                "summary": "Update an Bank Details",
+                "description": "Update an Bank Details",
+                "operationId": "bankDetailsUpdate",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Bank Detail ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BankDetailUpdateFormRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "bankDetails"
+                ],
+                "summary": "Delete an Bank Details",
+                "description": "Delete an Bank Details",
+                "operationId": "bankDetailsDelete",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Bank Detail ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/categories": {
+            "get": {
+                "tags": [
+                    "categories"
+                ],
+                "summary": "Get All Category",
+                "description": "Get All Category",
+                "operationId": "categoryLists",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "categories"
+                ],
+                "summary": "Post New Category",
+                "description": "Post New Category",
+                "operationId": "categoriesCreate",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CategoryCreateFormRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/categories/{id}": {
+            "get": {
+                "tags": [
+                    "categories"
+                ],
+                "summary": "Show an Category",
+                "description": "Show an Category",
+                "operationId": "categoriesDetails",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Category ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "categories"
+                ],
+                "summary": "Update an Category",
+                "description": "Update an Category",
+                "operationId": "categoriesUpdate",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Category ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CategoryUpdateFormRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "categories"
+                ],
+                "summary": "Delete an Category",
+                "description": "Delete an Category",
+                "operationId": "categoriesDelete",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Category ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/location/countries": {
+            "get": {
+                "tags": [
+                    "location"
+                ],
+                "summary": "Get all countries",
+                "description": "Get all countries",
+                "operationId": "all_countries",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/location/countries/{id}": {
+            "get": {
+                "tags": [
+                    "location"
+                ],
+                "summary": "Get details of country by id with attached states",
+                "description": "Get country with states in a country",
+                "operationId": "country_by_id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Country ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/location/state/{id}": {
+            "get": {
+                "tags": [
+                    "location"
+                ],
+                "summary": "Get all cities in a state",
+                "description": "Get all cities in a state",
+                "operationId": "state_by_id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "State ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
         "/api/v1/user/register": {
             "post": {
                 "tags": [
@@ -190,10 +1094,425 @@
                     }
                 ]
             }
+        },
+        "/api/v1/vehicle": {
+            "get": {
+                "tags": [
+                    "vehicle"
+                ],
+                "summary": "Get All Vehicle",
+                "description": "Get All Vehicle",
+                "operationId": "vehicleLists",
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "vehicle"
+                ],
+                "summary": "Post New Vehicle",
+                "description": "Post New Vehicle",
+                "operationId": "vehicleCreate",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/VehicleCreateFormRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/vehicle/{id}": {
+            "get": {
+                "tags": [
+                    "vehicle"
+                ],
+                "summary": "Show an Vehicle",
+                "description": "Show an Vehicle",
+                "operationId": "vehicleDetails",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Vehicle ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "vehicle"
+                ],
+                "summary": "Update an Vehicle",
+                "description": "Update an Vehicle",
+                "operationId": "vehicleUpdate",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Vehicle ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/VehicleUpdateFormRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "vehicle"
+                ],
+                "summary": "Delete an Vehicle",
+                "description": "Delete an Vehicle",
+                "operationId": "vehicleDelete",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Vehicle ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
         }
     },
     "components": {
         "schemas": {
+            "AddressCreateFormRequest": {
+                "title": "Address Create Form Request Fields",
+                "description": "Address Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "AddressUpdateFormRequest": {
+                "title": "Address Update Form Request Fields",
+                "description": "Address Update request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "BankCreateFormRequest": {
+                "title": "Bank Create Form Request Fields",
+                "description": "Bank Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "BankDetailCreateFormRequest": {
+                "title": "Bank Detail Create Form Request Fields",
+                "description": "Bank Detail Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "BankDetailUpdateFormRequest": {
+                "title": "Bank Detail Update Form Request Fields",
+                "description": "Bank Detail Update request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "BankUpdateFormRequest": {
+                "title": "Bank Update Form Request Fields",
+                "description": "Bank Update request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "CategoryCreateFormRequest": {
+                "title": "Category Create Form Request Fields",
+                "description": "Category Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "CategoryUpdateFormRequest": {
+                "title": "Category Update Form Request Fields",
+                "description": "Category Update request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "PaymentCreateFormRequest": {
+                "title": "Payment Create Form Request Fields",
+                "description": "Payment Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "PaymentUpdateFormRequest": {
+                "title": "Payment Update Form Request Fields",
+                "description": "Payment Update request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "RydeCoinPackageCreateFormRequest": {
+                "title": "Rydecoin Package Create Form Request Fields",
+                "description": "Rydecoin Package Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "RydeCoinPackageUpdateFormRequest": {
+                "title": "Rydecoin Package Update Form Request Fields",
+                "description": "Rydecoin Package Update request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "ErrandCreateFormRequest": {
+                "title": "Errand Create Form Request Fields",
+                "description": "Errand Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "ErrandTaskCreateFormRequest": {
+                "title": "Errand Task Create Form Request Fields",
+                "description": "Errand Task Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "ErrandTaskUpdateFormRequest": {
+                "title": "Errand Task Update Form Request Fields",
+                "description": "Errand Task Update request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "ErrandUpdateFormRequest": {
+                "title": "Errand Update Form Request Fields",
+                "description": "Errand Update request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "InventoryCreateFormRequest": {
+                "title": "Inventory Create Form Request Fields",
+                "description": "Inventory Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "InventoryUpdateFormRequest": {
+                "title": "Inventory Update Form Request Fields",
+                "description": "Inventory Update request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "LocalDispatchCreateFormRequest": {
+                "title": "Local Dispatch Create Form Request Fields",
+                "description": "Local Dispatch Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "LocalDispatchUpdateFormRequest": {
+                "title": "Local Dispatch Update Form Request Fields",
+                "description": "Local Dispatch Update request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "MobileTransactionCreateFormRequest": {
+                "title": "Mobile Transaction Create Form Request Fields",
+                "description": "Mobile Transaction Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "MobileTransactionUpdateFormRequest": {
+                "title": "Mobile Transaction Update Form Request Fields",
+                "description": "Mobile Transaction Update request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "RequestVanCreateFormRequest": {
+                "title": "Request Van Create Form Request Fields",
+                "description": "Request Van Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "RequestVanUpdateFormRequest": {
+                "title": "Van Request Update Form Request Fields",
+                "description": "Van Request Update request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "ServiceRateCreateFormRequest": {
+                "title": "Service Rate Create Form Request Fields",
+                "description": "Service Rate Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "ServiceRateUpdateFormRequest": {
+                "title": "Service Rate Update Form Request Fields",
+                "description": "Service Rate Update request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
             "UserLoginFormRequest": {
                 "title": "Sign in Form Request Fields",
                 "description": "sign in request body data",
@@ -292,26 +1611,24 @@
                         "description": "Password of the user",
                         "type": "string",
                         "example": "password"
-                    },
-                    "title": {
-                        "title": "User Title",
-                        "description": "Title of the user",
-                        "type": "string",
-                        "example": "Md"
-                    },
-                    "organization_code": {
-                        "title": "User Organization Code",
-                        "description": "Organization Code of the user",
-                        "type": "string",
-                        "example": "SIT3944"
-                    },
-                    "profile_image": {
-                        "title": "User Profile Image",
-                        "description": "Profile Image of the user",
-                        "type": "string",
-                        "example": "SIT Consulting"
                     }
                 },
+                "type": "object"
+            },
+            "VehicleCreateFormRequest": {
+                "title": "Vehicle Create Form Request Fields",
+                "description": "Vehicle Create request body data",
+                "required": [
+                    "first_name"
+                ],
+                "type": "object"
+            },
+            "VehicleUpdateFormRequest": {
+                "title": "Vehicle Update Form Request Fields",
+                "description": "Vehicle Update request body data",
+                "required": [
+                    "first_name"
+                ],
                 "type": "object"
             }
         },
