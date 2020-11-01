@@ -15,7 +15,7 @@ use Illuminate\Foundation\Http\FormRequest;
  * )
  */
 
-class UserRegistrationFormRequest extends BaseAPIInputRequest
+class UserRegistrationFormRequest extends FormRequest
 {
     /**
      * @OA\Property(

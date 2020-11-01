@@ -14,7 +14,7 @@ use Illuminate\Foundation\Http\FormRequest;
  * )
  */
 
-class UserUpdateFormRequest extends BaseAPIInputRequest
+class UserUpdateFormRequest extends FormRequest
 {
     /**
      * @OA\Property(
@@ -69,46 +69,7 @@ class UserUpdateFormRequest extends BaseAPIInputRequest
      *
      * @var string
      */
-    public $password;
-
-
-    /**
-     * @OA\Property(
-     *      title="User Title",
-     *      description="Title of the user",
-     *      example="Md"
-     * )
-     *
-     * @var string
-     */
-    public $title;
-
-
-    /**
-     * @OA\Property(
-     *      title="User Organization Code",
-     *      description="Organization Code of the user",
-     *      example="SIT3944"
-     * )
-     *
-     * @var string
-     */
-    public $organization_code;
-
-
-    /**
-     * @OA\Property(
-     *      title="User Profile Image",
-     *      description="Profile Image of the user",
-     *      example="SIT Consulting"
-     * )
-     *
-     * @var string
-     */
-    public $profile_image;
-
-
-   
+    public $password; 
 
 
 
@@ -134,9 +95,6 @@ class UserUpdateFormRequest extends BaseAPIInputRequest
             'middle_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'title' => 'required|string',
-            'organization_code' => 'required|string',
-            'profile_image' => 'file|required'
         ];
     }
 }

@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+use App\Http\Resources\User\UserResource;
+use App\Http\Resources\User\UserCollection;
+use App\Models\BankDetail;
+use App\Models\Address;
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -52,5 +56,15 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
+    }
+
+    public function bankDetails()
+    {
+        return $this->hasMany(BankDetail::class);
     }
 }

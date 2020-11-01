@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Resources\ServiceRate\ServiceRateResource;
+use App\Http\Resources\ServiceRate\ServiceRateCollection;
 
 class ServiceRate extends Model
 {

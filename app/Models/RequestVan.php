@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Resources\RequestVan\RequestVanResource;
+use App\Http\Resources\RequestVan\RequestVanCollection;
 
 class RequestVan extends Model
 {
