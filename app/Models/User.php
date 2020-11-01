@@ -12,6 +12,9 @@ class User extends Authenticatable implements JWTSubject
 {
     use HasRoles, HasFactory, Notifiable, CollectsPoints;
 
+    public $oneItem = UserResource::class;
+    public $allItems = UserCollection::class;
+
     protected $guard_name = 'api';
 
     /**

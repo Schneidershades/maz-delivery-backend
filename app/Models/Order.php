@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+
+    public $oneItem = OrderResource::class;
+    public $allItems = OrderCollection::class;
 }

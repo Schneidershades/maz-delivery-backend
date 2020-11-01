@@ -16,6 +16,8 @@ class CreateMobileTransactionsTable extends Migration
         Schema::create('mobile_transactions', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
+            $table->double('rate', 13, 2)->default(0);
+            $table->double('charge', 13, 2)->default(0);
             $table->timestamps();
         });
     }

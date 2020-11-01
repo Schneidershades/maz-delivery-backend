@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ErrandTask extends Model
 {
     use HasFactory;
+
+    public $oneItem = ErrandResource::class;
+    public $allItems = ErrandCollection::class;
 }

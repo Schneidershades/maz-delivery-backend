@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ServiceRate extends Model
 {
     use HasFactory;
+
+    public $oneItem = ServiceRateResource::class;
+    public $allItems = ServiceRateCollection::class;
 }

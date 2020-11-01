@@ -18,7 +18,7 @@ class CreatePaymentsTable extends Migration
             $table->integer('paymentable_id')->nullable();
             $table->string('paymentable_type')->nullable();
 
-            $table->string('amount')->nullable();
+            $table->double('amount', 13, 2)->default(0);
             $table->string('currency')->nullable();
 
             

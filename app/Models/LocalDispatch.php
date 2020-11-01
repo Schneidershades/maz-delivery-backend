@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class LocalDispatch extends Model
 {
     use HasFactory;
+
+
+    public $oneItem = LocalDispatchResource::class;
+    public $allItems = LocalDispatchCollection::class;
 }
