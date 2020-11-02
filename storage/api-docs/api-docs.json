@@ -917,6 +917,68 @@
                 }
             }
         },
+        "/api/v1/otp/new-phone-number/": {
+            "post": {
+                "tags": [
+                    "OTP"
+                ],
+                "summary": "Send OTP to a new user",
+                "description": "Sends an OTP to a new user",
+                "operationId": "resendEmailVerification",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NewUserPhoneFormRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "409": {
+                        "description": "Phone number Exists"
+                    }
+                }
+            }
+        },
+        "/api/v1/otp/verify-otp": {
+            "post": {
+                "tags": [
+                    "OTP"
+                ],
+                "summary": "Verify Otp",
+                "description": "Verify Otp",
+                "operationId": "VerifyOtp",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/VerifyOtpFormRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "409": {
+                        "description": "Phone number Exists"
+                    }
+                }
+            }
+        },
         "/api/v1/order": {
             "get": {
                 "tags": [
@@ -3099,6 +3161,64 @@
                 "required": [
                     "first_name"
                 ],
+                "type": "object"
+            },
+            "ForgotPasswordFormRequest": {
+                "title": "Forgot Password OTP Phone Number Form Request Fields",
+                "description": "Forgot Password OTP Phone Number request body data",
+                "properties": {
+                    "phone": {
+                        "title": "Phone Number",
+                        "description": "Phone Number of the new user",
+                        "type": "string",
+                        "example": "Phone Number of the new user"
+                    }
+                },
+                "type": "object"
+            },
+            "NewUserPhoneFormRequest": {
+                "title": "New OTP Phone Number Form Request Fields",
+                "description": "New OTP Phone Number request body data",
+                "properties": {
+                    "phone": {
+                        "title": "Phone Number",
+                        "description": "Phone Number of the new user",
+                        "type": "string",
+                        "example": "Phone Number of the new user"
+                    }
+                },
+                "type": "object"
+            },
+            "ResetPhoneUserPhoneFormRequest": {
+                "title": "OTP Phone Number Form Request Fields",
+                "description": "OTP Phone Number request body data",
+                "properties": {
+                    "phone": {
+                        "title": "Phone Number",
+                        "description": "Phone Number of the user",
+                        "type": "string",
+                        "example": "Phone Number of the user"
+                    },
+                    "code": {
+                        "title": "Country Code of the user ",
+                        "description": "Country Code of the user",
+                        "type": "string",
+                        "example": "Country Code of the user"
+                    }
+                },
+                "type": "object"
+            },
+            "VerifyOtpFormRequest": {
+                "title": "Verify OTP  Form Request Fields",
+                "description": "Verify OTP  request body data",
+                "properties": {
+                    "otp": {
+                        "title": "Otp",
+                        "description": "Otp received",
+                        "type": "string",
+                        "example": "Otp received"
+                    }
+                },
                 "type": "object"
             },
             "PaymentCreateFormRequest": {
