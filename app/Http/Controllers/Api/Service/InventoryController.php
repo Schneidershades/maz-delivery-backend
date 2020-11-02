@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Inventory;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 
-class InventoryController extends Controller
+class InventoryController extends ApiController
 {
     /**
     * @OA\Get(

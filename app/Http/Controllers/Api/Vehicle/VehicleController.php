@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Vehicle;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 
-class VehicleController extends Controller
+class VehicleController extends ApiController
 {
     /**
     * @OA\Get(

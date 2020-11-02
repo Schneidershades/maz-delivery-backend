@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Service;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 
-class RequestVanController extends Controller
+class RequestVanController extends ApiController
 {
     /**
     * @OA\Get(

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Service;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 
-class ServiceRateController extends Controller
+class ServiceRateController extends ApiController
 {
     /**
     * @OA\Get(

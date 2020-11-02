@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Rydecoin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 
-class RydeCoinPackageController extends Controller
+class RydeCoinPackageController extends ApiController
 {
     /**
     * @OA\Get(

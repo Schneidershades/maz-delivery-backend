@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Address;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 
-class AddressController extends Controller
+class AddressController extends ApiController
 {
     
         /**

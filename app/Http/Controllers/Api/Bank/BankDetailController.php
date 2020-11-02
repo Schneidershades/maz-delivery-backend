@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Bank;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 
-class BankDetailController extends Controller
+class BankDetailController extends ApiController
 {
     
         /**

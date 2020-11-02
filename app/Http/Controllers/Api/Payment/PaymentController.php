@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Payment;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 
-class PaymentController extends Controller
+class PaymentController extends ApiController
 {
     /**
     * @OA\Get(

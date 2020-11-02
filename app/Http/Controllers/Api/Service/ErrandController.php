@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Errand;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 
-class ErrandController extends Controller
+class ErrandController extends ApiController
 {
     /**
     * @OA\Get(

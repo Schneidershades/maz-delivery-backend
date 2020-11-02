@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Service;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 
-class MobileTransactionController extends Controller
+class MobileTransactionController extends ApiController
 {
     /**
     * @OA\Get(

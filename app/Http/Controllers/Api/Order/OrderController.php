@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Order;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class OrderController extends ApiController
 {
     /**
     * @OA\Get(
