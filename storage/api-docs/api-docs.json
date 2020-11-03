@@ -13,7 +13,7 @@
         "version": "1.0.0"
     },
     "paths": {
-        "/api/v1/address": {
+        "/api/v1/addresses": {
             "get": {
                 "tags": [
                     "address"
@@ -85,7 +85,7 @@
                 ]
             }
         },
-        "/api/v1/address/{id}": {
+        "/api/v1/addresses/{id}": {
             "get": {
                 "tags": [
                     "address"

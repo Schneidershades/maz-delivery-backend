@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Service;
+namespace App\Http\Controllers\Api\Rate;
 
 use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
+use App\Models\ServiceRate;
 
 class ServiceRateController extends ApiController
 {

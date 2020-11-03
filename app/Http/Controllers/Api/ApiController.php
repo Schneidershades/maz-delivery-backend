@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Traits\Api\ApiResponder;
-use App\Http\Controllers\Api\ApiController;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Schema;
 
-class ApiController extends ApiController
+class ApiController extends Controller
 {
     use ApiResponder;
 

@@ -15,7 +15,7 @@ Route::prefix('v1')->group(function () {
 		Route::resource('verify-otp', 'VerifyOtpController');
 	});
 
-	Route::group(['namespace' => 'Api\User'], function(){
+	Route::group(['prefix' => 'user', 'namespace' => 'Api\User'], function(){
 		Route::post('register', 'UserController@register');
     	Route::post('login', 'UserController@login');
     	Route::post('logout', 'UserController@logout');
@@ -29,6 +29,10 @@ Route::prefix('v1')->group(function () {
 		Route::resource('local-diapatch', 'LocalDispatchController');
 		Route::resource('mobile-transaction', 'MobileTransactionController');
 		Route::resource('request-van', 'RequestVanController');
+	});
+
+	Route::group(['namespace' => 'Api\Address'], function(){
+		Route::resource('addresses', 'AddressController');
 	});
 
 	Route::group(['namespace' => 'Api\Bank'], function(){

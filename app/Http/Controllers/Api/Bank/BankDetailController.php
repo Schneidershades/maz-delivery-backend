@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Bank;
+namespace App\Http\Controllers\Api\Bank;
 
-use App\Http\Controllers\Api\ApiController;
+use App\Http\Controllers\Api\Api\ApiController;
 use Illuminate\Http\Request;
+use App\Models\BankDetail;
 
 class BankDetailController extends ApiController
 {

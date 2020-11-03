@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Order;
+namespace App\Http\Controllers\Api\Order;
 
 use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
+use App\Models\Order;
 
 class OrderController extends ApiController
 {

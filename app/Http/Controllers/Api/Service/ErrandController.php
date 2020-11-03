@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Errand;
+namespace App\Http\Controllers\Api\Service;
 
 use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
+use App\Models\Errand;
 
 class ErrandController extends ApiController
 {

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Payment;
+namespace App\Http\Controllers\Api\Payment;
 
 use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
+use App\Models\Payment;
 
 class PaymentController extends ApiController
 {

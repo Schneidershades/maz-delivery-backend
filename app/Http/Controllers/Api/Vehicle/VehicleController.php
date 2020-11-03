@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Vehicle;
+namespace App\Http\Controllers\Api\Vehicle;
 
 use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
+use App\Models\Vehicle;
 
 class VehicleController extends ApiController
 {

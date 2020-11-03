@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Address;
+namespace App\Http\Controllers\Api\Address;
 
 use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
+use App\Models\Address;
 
 class AddressController extends ApiController
 {
     
         /**
     * @OA\Get(
-    *      path="/api/v1/address",
+    *      path="/api/v1/addresses",
     *      operationId="addressLists",
     *      tags={"address"},
     *      summary="Get All Address",
@@ -45,7 +46,7 @@ class AddressController extends ApiController
 
     /**
     * @OA\Post(
-    *      path="/api/v1/address",
+    *      path="/api/v1/addresses",
     *      operationId="addressCreateAddress",
     *      tags={"address"},
     *      summary="Post New Address",
@@ -87,7 +88,7 @@ class AddressController extends ApiController
 
     /**
     * @OA\Get(
-    *      path="/api/v1/address/{id}",
+    *      path="/api/v1/addresses/{id}",
     *      operationId="addressDetails",
     *      tags={"address"},
     *      summary="Show an Address",
@@ -134,7 +135,7 @@ class AddressController extends ApiController
 
     /**
     * @OA\PUT(
-    *      path="/api/v1/address/{id}",
+    *      path="/api/v1/addresses/{id}",
     *      operationId="addressUpdateAddress",
     *      tags={"address"},
     *      summary="Update an Address",
@@ -186,7 +187,7 @@ class AddressController extends ApiController
 
      /**
     * @OA\Delete(
-    *      path="/api/v1/address/{id}",
+    *      path="/api/v1/addresses/{id}",
     *      operationId="addressDeleteAddress",
     *      tags={"address"},
     *      summary="Delete an Address",

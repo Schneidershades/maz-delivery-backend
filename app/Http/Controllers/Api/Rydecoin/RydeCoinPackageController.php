@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Rydecoin;
+namespace App\Http\Controllers\Api\Rydecoin;
 
 use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
+use App\Models\RydeCoinPackage;
 
 class RydeCoinPackageController extends ApiController
 {
