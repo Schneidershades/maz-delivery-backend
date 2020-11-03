@@ -46,7 +46,11 @@ class UserController extends ApiController
      */
     public function register(UserRegistrationFormRequest $request)
     {
-        $user = User::create($request);
+        $model = new User;
+
+        $this->requestAndDbIntersection($request, $model, []);
+
+        $model->save();
         
         $token = JWTAuth::attempt($request->only('email', 'password'));
 
@@ -131,8 +135,13 @@ class UserController extends ApiController
     */
 
     public function update(Request $request){
-        $user = User::update($request);
-        return $this->showOne($user);
+        $model = User::find(auth()->user()->id);
+
+        $this->requestAndDbIntersection($request, $model, []);
+
+        $model->save();
+
+        return $this->showMessage('user updated');
     }
 
     /**
@@ -206,7 +215,7 @@ class UserController extends ApiController
     */
     public function show(){
         $user = auth()->user();
-        return $this->showOne($user);
+        return $this->showOne($user, 201);
     }
 
 }

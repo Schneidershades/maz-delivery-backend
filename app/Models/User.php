@@ -11,10 +11,11 @@ use App\Http\Resources\User\UserResource;
 use App\Http\Resources\User\UserCollection;
 use App\Models\BankDetail;
 use App\Models\Address;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use HasRoles, HasFactory, Notifiable, CollectsPoints;
+    use HasRoles, HasFactory, Notifiable;
 
     public $oneItem = UserResource::class;
     public $allItems = UserCollection::class;

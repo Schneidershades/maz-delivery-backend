@@ -10,7 +10,7 @@ class VehicleController extends ApiController
 {
     /**
     * @OA\Get(
-    *      path="/api/v1/vehicle",
+    *      path="/api/v1/vehicles",
     *      operationId="vehicleLists",
     *      tags={"vehicle"},
     *      summary="Get All Vehicle",
@@ -45,7 +45,7 @@ class VehicleController extends ApiController
 
     /**
     * @OA\Post(
-    *      path="/api/v1/vehicle",
+    *      path="/api/v1/vehicles",
     *      operationId="vehicleCreate",
     *      tags={"vehicle"},
     *      summary="Post New Vehicle",
@@ -87,7 +87,7 @@ class VehicleController extends ApiController
 
     /**
     * @OA\Get(
-    *      path="/api/v1/vehicle/{id}",
+    *      path="/api/v1/vehicles/{id}",
     *      operationId="vehicleDetails",
     *      tags={"vehicle"},
     *      summary="Show an Vehicle",
@@ -134,7 +134,7 @@ class VehicleController extends ApiController
 
     /**
     * @OA\PUT(
-    *      path="/api/v1/vehicle/{id}",
+    *      path="/api/v1/vehicles/{id}",
     *      operationId="vehicleUpdate",
     *      tags={"vehicle"},
     *      summary="Update an Vehicle",
@@ -186,7 +186,7 @@ class VehicleController extends ApiController
 
      /**
     * @OA\Delete(
-    *      path="/api/v1/vehicle/{id}",
+    *      path="/api/v1/vehicles/{id}",
     *      operationId="vehicleDelete",
     *      tags={"vehicle"},
     *      summary="Delete an Vehicle",

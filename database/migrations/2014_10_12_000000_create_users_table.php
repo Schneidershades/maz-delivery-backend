@@ -25,9 +25,9 @@ class CreateUsersTable extends Migration
             $table->text('address')->nullable();
             $table->string('lat')->nullable();
             $table->string('lng')->nullable();
-            $table->foreignId('city_id')->constrained('cities')->nullable();
-            $table->foreignId('state_id')->constrained('states')->nullable();
-            $table->foreignId('country_id')->constrained('countries')->nullable();
+            $table->foreignId('city_id')->nullable();
+            $table->foreignId('state_id')->nullable();
+            $table->foreignId('country_id')->nullable();
 
             $table->string('type')->nullable();
             // if type is a company

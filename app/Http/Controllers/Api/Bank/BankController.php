@@ -10,7 +10,7 @@ class BankController extends ApiController
 {
     /**
     * @OA\Get(
-    *      path="/api/v1/bank",
+    *      path="/api/v1/banks",
     *      operationId="bankLists",
     *      tags={"bank"},
     *      summary="Get All Bank",
@@ -45,7 +45,7 @@ class BankController extends ApiController
 
     /**
     * @OA\Post(
-    *      path="/api/v1/bank",
+    *      path="/api/v1/banks",
     *      operationId="bankCreate",
     *      tags={"bank"},
     *      summary="Post New Bank",
@@ -87,7 +87,7 @@ class BankController extends ApiController
 
     /**
     * @OA\Get(
-    *      path="/api/v1/bank/{id}",
+    *      path="/api/v1/banks/{id}",
     *      operationId="bankDetails",
     *      tags={"bank"},
     *      summary="Show an Bank",
@@ -134,7 +134,7 @@ class BankController extends ApiController
 
     /**
     * @OA\PUT(
-    *      path="/api/v1/bank/{id}",
+    *      path="/api/v1/banks/{id}",
     *      operationId="bankUpdate",
     *      tags={"bank"},
     *      summary="Update an Bank",
@@ -186,7 +186,7 @@ class BankController extends ApiController
 
      /**
     * @OA\Delete(
-    *      path="/api/v1/bank/{id}",
+    *      path="/api/v1/banks/{id}",
     *      operationId="bankDelete",
     *      tags={"bank"},
     *      summary="Delete an Bank",

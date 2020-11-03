@@ -26,7 +26,7 @@ Route::prefix('v1')->group(function () {
 	Route::group(['namespace' => 'Api\Service'], function(){
 		Route::resource('errand', 'ErrandController');
 		Route::resource('inventory', 'InventoryController');
-		Route::resource('local-diapatch', 'LocalDispatchController');
+		Route::resource('local-dispatch', 'LocalDispatchController');
 		Route::resource('mobile-transaction', 'MobileTransactionController');
 		Route::resource('request-van', 'RequestVanController');
 	});
@@ -62,7 +62,7 @@ Route::prefix('v1')->group(function () {
 		Route::resource('service-rate', 'ServiceRateController');
 	});
 
-	Route::group(['namespace' => 'Api\Rate'], function(){
+	Route::group(['namespace' => 'Api\Vehicle'], function(){
 		Route::resource('vehicles', 'VehicleController');
 	});
 	

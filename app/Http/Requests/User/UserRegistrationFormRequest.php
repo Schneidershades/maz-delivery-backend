@@ -26,29 +26,7 @@ class UserRegistrationFormRequest extends FormRequest
      *
      * @var string
      */
-    public $first_name;
-
-    /**
-     * @OA\Property(
-     *      title="User Middle Name",
-     *      description="Middle name of the user",
-     *      example="Cordlings"
-     * )
-     *
-     * @var string
-     */
-    public $middle_name;
-
-    /**
-     * @OA\Property(
-     *      title="User Last Name",
-     *      description="Last name of the user",
-     *      example="Azikiwe"
-     * )
-     *
-     * @var string
-     */
-    public $last_name;
+    public $name;
 
     /**
      * @OA\Property(
@@ -90,9 +68,7 @@ class UserRegistrationFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => 'required|string|max:255',
-            'middle_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
         ];
     }

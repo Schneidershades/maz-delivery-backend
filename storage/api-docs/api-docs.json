@@ -220,7 +220,7 @@
                 ]
             }
         },
-        "/api/v1/bank": {
+        "/api/v1/banks": {
             "get": {
                 "tags": [
                     "bank"
@@ -292,7 +292,7 @@
                 ]
             }
         },
-        "/api/v1/bank/{id}": {
+        "/api/v1/banks/{id}": {
             "get": {
                 "tags": [
                     "bank"
@@ -2889,7 +2889,7 @@
                 ]
             }
         },
-        "/api/v1/vehicle": {
+        "/api/v1/vehicles": {
             "get": {
                 "tags": [
                     "vehicle"
@@ -2961,7 +2961,7 @@
                 ]
             }
         },
-        "/api/v1/vehicle/{id}": {
+        "/api/v1/vehicles/{id}": {
             "get": {
                 "tags": [
                     "vehicle"
@@ -3394,23 +3394,11 @@
                     "first_name"
                 ],
                 "properties": {
-                    "first_name": {
+                    "name": {
                         "title": "User First Name",
                         "description": "First name of the user",
                         "type": "string",
                         "example": "Nnamdi"
-                    },
-                    "middle_name": {
-                        "title": "User Middle Name",
-                        "description": "Middle name of the user",
-                        "type": "string",
-                        "example": "Cordlings"
-                    },
-                    "last_name": {
-                        "title": "User Last Name",
-                        "description": "Last name of the user",
-                        "type": "string",
-                        "example": "Azikiwe"
                     },
                     "email": {
                         "title": "User email",

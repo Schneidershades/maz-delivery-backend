@@ -21,16 +21,6 @@ class CreatePaymentsTable extends Migration
             $table->double('amount', 13, 2)->default(0);
             $table->string('currency')->nullable();
 
-            
-             $table->dropColumn('user_debit_token');
-             $table->dropColumn('transaction_reference');
-             $table->dropColumn('gateway_charge_response');
-             $table->dropColumn('gateway_charge_message');
-             $table->dropColumn('gateway_final_charge_status');
-             $table->dropColumn('gateway_final_charge_message');
-             $table->dropColumn('gateway_debit_response');
-             $table->dropColumn('investment_problem');
-
             $table->string('payment_method')->nullable();
             $table->string('payment_gateway')->nullable();
             $table->float('payment_gateway_charged_percentage')->nullable();

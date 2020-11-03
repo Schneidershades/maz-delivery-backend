@@ -17,6 +17,6 @@ class CountryTableSeeder extends Seeder
     		'name'=>'Nigeria',
             'code'=>'234',
             'currency'=>'NGN',
-    	] );
+    	]);
     }
 }
