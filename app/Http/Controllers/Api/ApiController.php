@@ -11,12 +11,6 @@ class ApiController extends Controller
 {
     use ApiResponder;
 
-    public function getColumns($table)
-    {       
-        $columns = Schema::getColumnListing($table);
-        return $columns;
-    }
-
     public function requestAndDbIntersection($request, $model, array $excludeFieldsForLogic = [], array $includeFields = [])
     {
         $excludeColumns = array_diff($request->all(), $excludeFieldsForLogic);

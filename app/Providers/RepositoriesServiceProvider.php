@@ -8,6 +8,8 @@ use App\Repositories\UserRepository;
 use App\Repositories\Interfaces\UserRepositoryInterface;
 use App\Repositories\PhoneVerificationRepository;
 use App\Repositories\Interfaces\PhoneVerificationRepositoryInterface;
+use App\Repositories\OrderRepository;
+use App\Repositories\Interfaces\OrderRepositoryInterface;
 
 
 class RepositoriesServiceProvider extends ServiceProvider
@@ -31,5 +33,6 @@ class RepositoriesServiceProvider extends ServiceProvider
     {
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(PhoneVerificationRepositoryInterface::class, PhoneVerificationRepository::class);
+        $this->app->bind(OrderRepositoryInterface::class, OrderRepository::class);
     }
 }
