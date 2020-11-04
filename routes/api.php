@@ -7,11 +7,6 @@ Route::prefix('v1')->group(function () {
 
 	Route::group(['namespace' => 'Api\OTP'], function(){
 		Route::resource('phone', 'NewPhoneNumberController');
-		Route::resource('phone-reset-otp', 'NewPhoneNumberResendOtpController');
-		Route::resource('forgot-password-phone', 'ForgotPasswordPhoneNumberController');
-		Route::resource('forgot-password-phone-resend-otp', 'ForgotPasswordResendOtpController');
-		Route::resource('reset-phone', 'ResetPhoneNumberController');
-		Route::resource('reset-phone-resend-otp', 'ResetPhoneNumberResendOtpController');
 		Route::resource('verify-otp', 'VerifyOtpController');
 	});
 
@@ -31,7 +26,7 @@ Route::prefix('v1')->group(function () {
 		Route::resource('request-van', 'RequestVanController');
 	});
 
-	Route::group(['namespace' => 'Api\Address'], function(){
+	Route::group(['namespace' => 'Api\Address', 'middleware' => 'auth:api'], function(){
 		Route::resource('addresses', 'AddressController');
 	});
 
@@ -50,7 +45,7 @@ Route::prefix('v1')->group(function () {
 		Route::resource('city', 'CityController');
 	});
 
-	Route::group(['namespace' => 'Api\Order'], function(){
+	Route::group(['namespace' => 'Api\Order', 'middleware' => 'auth:api'], function(){
 		Route::resource('orders', 'OrderController');
 	});
 
@@ -64,9 +59,5 @@ Route::prefix('v1')->group(function () {
 
 	Route::group(['namespace' => 'Api\Vehicle'], function(){
 		Route::resource('vehicles', 'VehicleController');
-	});
-	
-	Route::group(['namespace' => 'Api\Address'], function(){
-		Route::resource('addresses', 'AddressController');
 	});
 });	
