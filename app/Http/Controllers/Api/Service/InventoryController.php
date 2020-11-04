@@ -5,9 +5,17 @@ namespace App\Http\Controllers\Api\Service;
 use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 use App\Models\Inventory;
+use App\Service\OrderService;
 
 class InventoryController extends ApiController
 {
+    private $service;
+
+    public function __construct(OrderCreateService $service)
+    {
+        $this->service = $service;
+    }
+
     /**
     * @OA\Get(
     *      path="/api/v1/inventory",
@@ -80,7 +88,8 @@ class InventoryController extends ApiController
     {
     	$model = new Inventory;
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save($model);
+    	$model = $this->save();
+        $model = $this->service->register($request, $model);
         return $this->showOne($model);
     }
 
@@ -180,7 +189,8 @@ class InventoryController extends ApiController
     {
         $model = Inventory::find($id);
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save($model);
+    	$model = $this->save();
+        $model = $this->service->register($request, $model, $id);
         return $this->showOne($model);
     }
 

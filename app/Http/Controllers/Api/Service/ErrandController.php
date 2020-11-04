@@ -5,9 +5,17 @@ namespace App\Http\Controllers\Api\Service;
 use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 use App\Models\Errand;
+use App\Service\OrderService;
 
 class ErrandController extends ApiController
 {
+    private $service;
+
+    public function __construct(OrderService $service)
+    {
+        $this->service = $service;
+    }
+
     /**
     * @OA\Get(
     *      path="/api/v1/errand",
@@ -81,6 +89,7 @@ class ErrandController extends ApiController
     	$model = new Errand;
     	$model = $this->requestAndDbIntersection($request, $model);
     	$model = $this->save();
+        $model = $this->service->register($request, $model);
         return $this->showOne($model);
     }
 
@@ -180,7 +189,8 @@ class ErrandController extends ApiController
     {
         $model = Errand::find($id);
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save($model);
+    	$model = $this->save();
+        $model = $this->service->register($request, $model, $id);
         return $this->showOne($model);
     }
 

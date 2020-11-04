@@ -5,9 +5,16 @@ namespace App\Http\Controllers\Api\Service;
 use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 use App\Models\RequestVan;
+use App\Service\OrderService;
 
 class RequestVanController extends ApiController
 {
+    private $service;
+
+    public function __construct(OrderService $service)
+    {
+        $this->service = $service;
+    }
     /**
     * @OA\Get(
     *      path="/api/v1/request-van",
@@ -81,6 +88,7 @@ class RequestVanController extends ApiController
     	$model = new RequestVan;
     	$model = $this->requestAndDbIntersection($request, $model);
     	$model = $this->save($model);
+        $model = $this->service->register($request, $model);
         return $this->showOne($model);
     }
 
@@ -181,6 +189,7 @@ class RequestVanController extends ApiController
         $model = RequestVan::find($id);
     	$model = $this->requestAndDbIntersection($request, $model);
     	$model = $this->save($model);
+        $model = $this->service->register($request, $model, $id);
         return $this->showOne($model);
     }
 
