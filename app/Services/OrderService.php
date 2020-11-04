@@ -5,20 +5,12 @@ use App\Models\Order;
 use Illuminate\Support\Facades\Schema;
 use App\Repositories\Interfaces\OrderRepositoryInterface;
 
-class OrderService implements ServiceInterface
+class OrderService
 {
-     /**
-     * @var OrderRepositoryInterface
-     */
-    private $repository;
-
-    public function __construct(OrderRepositoryInterface $repository) 
-    {
-        $this->repository = $repository;
-    }
-
     public function register($request, $model, $id = null)
     {
+        return ($request);
+
         if($id!=null){
             $model = $this->repository->find($id);
         }
@@ -33,7 +25,16 @@ class OrderService implements ServiceInterface
      */
     protected function hydrateRequest($request, $model)
     {
+        $lastOrder = Order::latest()->first();
+
+        if($lastOrder != null){
+            $number = 10000 + $lastOrder ? (int)$lastOrder->id : 0;
+        }else{
+            $number = 10000;
+        }        
+
         $item = [
+            'identifier' => '#ORD'. $number,
             'orderable_id' => $model->id,
             'orderable_type' => $model->getTable()
         ];

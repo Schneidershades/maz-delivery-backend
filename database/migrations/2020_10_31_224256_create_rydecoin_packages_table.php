@@ -18,7 +18,7 @@ class CreateRydecoinPackagesTable extends Migration
             $table->string('name')->nullable();
             $table->string('identifier')->nullable();
             $table->double('rydecoin',13,2)->default(0);
-            $table->string('coin')->nullable();
+            $table->double('amount',13,2)->default(0);
             $table->string('percentage')->nullable();
             $table->softDeletes();
             $table->timestamps();

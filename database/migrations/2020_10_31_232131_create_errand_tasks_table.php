@@ -15,6 +15,7 @@ class CreateErrandTasksTable extends Migration
     {
         Schema::create('errand_tasks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('order_id')->nullable();
             $table->string('name')->nullable();
             $table->string('address')->nullable();
             $table->string('instructions')->nullable();

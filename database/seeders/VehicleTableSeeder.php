@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Vehicle;
 
 class VehicleTableSeeder extends Seeder
 {
@@ -13,7 +14,7 @@ class VehicleTableSeeder extends Seeder
      */
     public function run()
     {
-        State::create([
+        Vehicle::create([
     		'name'=>'Dispatch',
     	]);
     }

@@ -16,6 +16,35 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ErrandCreateFormRequest extends FormRequest
 {
+
+
+    /**
+     * @OA\Property(
+     *      title="User email",
+     *      description="Email of the user",
+     *      example="1"
+     * )
+     *
+     * @var integer
+     */
+    public $service_rates_id;
+
+
+    /**
+   *        @OA\Property(property="task", type="object", type="array",
+    *            @OA\Items(
+    *                @OA\Property(property="name", type="string", example="Go to Market"),
+    *                @OA\Property(property="address", type="string", example="I need Something"),
+    *                @OA\Property(property="instructions", type="string", example="Please let them"),
+    *                @OA\Property(property="date", type="string", example="20-09-2020"),
+    *                @OA\Property(property="time", type="string", example="12:30"),
+    *            ),
+    *        ),
+    *    ),
+    */    
+    public $task;
+
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -23,7 +52,7 @@ class ErrandCreateFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -34,7 +63,13 @@ class ErrandCreateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'service_rates_id' => 'required|int|exists:service_rates,id',
+            'task' => 'required|array',
+            'task.*.name' => 'required|string',
+            'task.*.address' =>'required|string',
+            'task.*.instructions' =>'required|string',
+            'task.*.date' =>'required|date',
+            'task.*.time' =>'required',
         ];
     }
 }

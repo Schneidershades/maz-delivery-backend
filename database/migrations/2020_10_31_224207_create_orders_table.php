@@ -15,16 +15,18 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            
             $table->string('identifier')->nullable();
             $table->foreignId('user_id')->nullable();
-            $table->double('amount',13,2)->default(0);
-            $table->double('rydecoin',13,2)->default(0);
+            $table->double('amount', 13, 2)->default(0);
+            $table->double('rydecoin', 13, 2)->default(0);
             $table->integer('orderable_id')->nullable();
             $table->string('orderable_type')->nullable();
             $table->integer('dispatch_id')->nullable();
             $table->string('dispatch_status')->default('pending')->nullable();
-            $table->string('note')->nullable();
+            $table->text('note')->nullable();
+            $table->text('rating')->nullable();
+            $table->text('user_comment')->nullable();
+            $table->text('dispatch_comment')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

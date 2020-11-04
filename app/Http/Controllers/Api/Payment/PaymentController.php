@@ -46,13 +46,13 @@ class PaymentController extends ApiController
     /**
     * @OA\Post(
     *      path="/api/v1/payment",
-    *      operationId="createPaymentDetail",
+    *      operationId="createPayment",
     *      tags={"payment"},
     *      summary="Post New Payment",
     *      description="Post New Payment",
     *      @OA\RequestBody(
     *          required=true,
-    *          @OA\JsonContent(ref="#/components/schemas/PaymentDetailCreateFormRequest")
+    *          @OA\JsonContent(ref="#/components/schemas/PaymentCreateFormRequest")
     *      ),
     *      @OA\Response(
     *          response=200,

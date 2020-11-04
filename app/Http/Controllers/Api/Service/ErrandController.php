@@ -5,17 +5,11 @@ namespace App\Http\Controllers\Api\Service;
 use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 use App\Models\Errand;
-use App\Service\OrderService;
+use App\Services\OrderService;
+use App\Http\Requests\Service\ErrandCreateFormRequest;
 
 class ErrandController extends ApiController
 {
-    private $service;
-
-    public function __construct(OrderService $service)
-    {
-        $this->service = $service;
-    }
-
     /**
     * @OA\Get(
     *      path="/api/v1/errand",
@@ -62,6 +56,7 @@ class ErrandController extends ApiController
     *          required=true,
     *          @OA\JsonContent(ref="#/components/schemas/ErrandCreateFormRequest")
     *      ),
+    *      
     *      @OA\Response(
     *          response=200,
     *          description="Successful",
@@ -89,7 +84,7 @@ class ErrandController extends ApiController
     	$model = new Errand;
     	$model = $this->requestAndDbIntersection($request, $model);
         $model = $model->save();
-        $model = $this->service->register($request, $model);
+        $model = (new OrderService())->register($request, $model);
         return $this->showOne($model);
     }
 
