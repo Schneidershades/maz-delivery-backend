@@ -7,12 +7,6 @@ use App\Repositories\Interfaces\OrderRepositoryInterface;
 
 class OrderService implements ServiceInterface
 {
-    public function getColumns($model)
-    {       
-        $columns = Schema::getColumnListing($model);
-        return $columns;
-    }
-
      /**
      * @var OrderRepositoryInterface
      */
