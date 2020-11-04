@@ -131,50 +131,6 @@ class BankController extends ApiController
     }
 
 
-    /**
-    * @OA\PUT(
-    *      path="/api/v1/banks/{id}",
-    *      operationId="bankUpdate",
-    *      tags={"bank"},
-    *      summary="Update an Bank",
-    *      description="Update an Bank",
-    *      
-     *      @OA\Parameter(
-     *          name="id",
-     *          description="Bank ID",
-     *          required=true,
-     *          in="path",
-     *          @OA\Schema(
-     *              type="integer"
-     *          )
-     *      ),
-    *      @OA\RequestBody(
-    *          required=true,
-    *          @OA\JsonContent(ref="#/components/schemas/BankUpdateFormRequest")
-    *      ),
-    *      @OA\Response(
-    *          response=200,
-    *          description="Successful",
-    *          @OA\MediaType(
-    *             mediaType="application/json",
-    *         ),
-    *       ),
-    *      @OA\Response(
-    *          response=400,
-    *          description="Bad Request"
-    *      ),
-    *      @OA\Response(
-    *          response=401,
-    *          description="Unauthenticated",
-    *      ),
-    *      @OA\Response(
-    *          response=403,
-    *          description="Forbidden"
-    *      ),
-    *      security={ {"bearerAuth": {}} },
-    * )
-    */
-
     public function update(BankUpdateFormRequest $request, $id)
     {
         $model = Bank::find($id);
