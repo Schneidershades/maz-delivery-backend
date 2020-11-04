@@ -102,7 +102,6 @@ class BankController extends ApiController
      *              type="integer"
      *          )
      *      ),
-     *      
     *      @OA\Response(
     *          response=200,
     *          description="Successful",
