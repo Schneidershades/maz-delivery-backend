@@ -4,6 +4,7 @@
 namespace App\Services;
 
 use App\Models\Order;
+use Illuminate\Support\Facades\Schema;
 use App\Repositories\Interfaces\OrderRepositoryInterface;
 
 class OrderCreateService implements ServiceInterface
@@ -18,20 +19,18 @@ class OrderCreateService implements ServiceInterface
         $this->repository = $repository;
     }
 
-    public function register($request)
+    public function register($request, $model)
     {
-        $job = $this->hydrateRequest($request);
+        $item = $this->hydrateRequest($request, $model);
 
-        return $this->repository->save($job);
+        return $this->repository->save($item);
     }
     /**
      * @param Request $request
      * @return Order
      */
-    protected function hydrateRequest($request)
+    protected function hydrateRequest($request, $model)
     {
-        $model = new Order;
-
         return $this->repository->requestAndDbIntersection($request, $model);
     }
 }

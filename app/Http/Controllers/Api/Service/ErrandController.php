@@ -60,16 +60,16 @@ class ErrandController extends ApiController
     *          @OA\MediaType(
     *             mediaType="application/json",
     *         ),
-    *       ),
-    *      @OA\Response(
     *          response=400,
     *          description="Bad Request"
+    *       ),
+    *      @OA\Response(
     *      ),
     *      @OA\Response(
     *          response=401,
     *          description="Unauthenticated",
     *      ),
-    *      @OA\Response(
+    *      @OA\Response(    
     *          response=403,
     *          description="Forbidden"
     *      ),
@@ -80,7 +80,7 @@ class ErrandController extends ApiController
     {
     	$model = new Errand;
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save($model);
+    	$model = $this->save();
         return $this->showOne($model);
     }
 
