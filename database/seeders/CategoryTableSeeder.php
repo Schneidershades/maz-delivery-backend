@@ -14,5 +14,13 @@ class CategoryTableSeeder extends Seeder
             'name' =>'Food & Beverages',
         ] );
 
+        Category::create( [
+            'name' =>'Parcel/Documents',
+        ] );
+
+        Category::create( [
+            'name' =>'Gadgets',
+        ] );
+
     }
 }
