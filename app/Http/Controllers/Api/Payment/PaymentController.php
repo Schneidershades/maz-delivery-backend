@@ -43,6 +43,47 @@ class PaymentController extends ApiController
         return $this->showAll(Payment::all());
     }
 
+    /**
+    * @OA\Post(
+    *      path="/api/v1/payment",
+    *      operationId="createPaymentDetail",
+    *      tags={"payment"},
+    *      summary="Post New Payment",
+    *      description="Post New Payment",
+    *      @OA\RequestBody(
+    *          required=true,
+    *          @OA\JsonContent(ref="#/components/schemas/PaymentDetailCreateFormRequest")
+    *      ),
+    *      @OA\Response(
+    *          response=200,
+    *          description="Successful",
+    *          @OA\MediaType(
+    *             mediaType="application/json",
+    *         ),
+    *       ),
+    *      @OA\Response(
+    *          response=400,
+    *          description="Bad Request"
+    *      ),
+    *      @OA\Response(
+    *          response=401,
+    *          description="Unauthenticated",
+    *      ),
+    *      @OA\Response(
+    *          response=403,
+    *          description="Forbidden"
+    *      ),
+    *      security={ {"bearerAuth": {}} },
+    * )
+    */
+    public function store(PaymentCreateFormRequest $request)
+    {
+        $model = new Payment;
+        $model = $this->requestAndDbIntersection($request, $model);
+        $model = $model->save();
+        return $this->showMessage('Payment Saved');
+    }
+
 
     /**
     * @OA\Get(
@@ -139,7 +180,7 @@ class PaymentController extends ApiController
     {
         $model = Payment::find($id);
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save($model);
+    	$model = $model->save();
         return $this->showOne($model);
     }
 

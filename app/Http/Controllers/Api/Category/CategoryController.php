@@ -80,7 +80,7 @@ class CategoryController extends ApiController
     {
     	$model = new Category;
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save($model);
+        $model = $model->save();
         return $this->showOne($model);
     }
 
@@ -180,7 +180,7 @@ class CategoryController extends ApiController
     {
         $model = Category::find($id);
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save($model);
+        $model = $model->save();
         return $this->showOne($model);
     }
 

@@ -80,7 +80,7 @@ class ServiceRateController extends ApiController
     {
     	$model = new ServiceRate;
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save($model);
+        $model = $model->save();
         return $this->showOne($model);
     }
 
@@ -180,7 +180,7 @@ class ServiceRateController extends ApiController
     {
         $model = ServiceRate::find($id);
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save($model);
+        $model = $model->save();
         return $this->showOne($model);
     }
 

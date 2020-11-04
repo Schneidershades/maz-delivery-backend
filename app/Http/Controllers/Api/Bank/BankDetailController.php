@@ -81,7 +81,7 @@ class BankDetailController extends ApiController
     {
     	$model = new BankDetail;
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save($model);
+        $model = $model->save();
         return $this->showOne($model);
     }
 
@@ -180,7 +180,7 @@ class BankDetailController extends ApiController
     {
         $model = BankDetail::find($id);
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save($model);
+        $model = $model->save();
         return $this->showOne($model);
     }
 

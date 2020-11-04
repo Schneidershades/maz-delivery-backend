@@ -81,7 +81,7 @@ class AddressController extends ApiController
     {
     	$model = new Address;
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save();
+        $model = $model->save();
         return $this->showMessage($model);
     }
 
@@ -181,7 +181,7 @@ class AddressController extends ApiController
     {
         $model = $this->modelRepository->find($id);
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save();
+        $model = $model->save();
         return $this->showMessage($model);
     }
 

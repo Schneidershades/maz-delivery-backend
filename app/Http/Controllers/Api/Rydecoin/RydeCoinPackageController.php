@@ -80,7 +80,7 @@ class RydeCoinPackageController extends ApiController
     {
     	$model = new RydecoinPackage;
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save($model);
+        $model = $model->save();
         return $this->showOne($model);
     }
 
@@ -180,7 +180,7 @@ class RydeCoinPackageController extends ApiController
     {
         $model = RydecoinPackage::find($id);
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save($model);
+        $model = $model->save();
         return $this->showOne($model);
     }
 

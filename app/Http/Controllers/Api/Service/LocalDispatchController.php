@@ -88,7 +88,7 @@ class LocalDispatchController extends ApiController
     {
     	$model = new LocalDispatch;
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save();
+        $model = $model->save();
         $model = $this->service->register($request, $model);
         return $this->showOne($model);
     }
@@ -189,7 +189,7 @@ class LocalDispatchController extends ApiController
     {
         $model = LocalDispatch::find($id);
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save();
+        $model = $model->save();
         $model = $this->service->register($request, $model, $id);
         return $this->showOne($model);
     }

@@ -88,7 +88,7 @@ class MobileTransactionController extends ApiController
     {
     	$model = new MobileTransaction;
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save();
+        $model = $model->save();
         $model = $this->service->register($request, $model);
         return $this->showOne($model);
     }
@@ -189,7 +189,7 @@ class MobileTransactionController extends ApiController
     {
         $model = MobileTransaction::find($id);
     	$model = $this->requestAndDbIntersection($request, $model);
-    	$model = $this->save();
+        $model = $model->save();
         $model = $this->service->register($request, $model, $id);
         return $this->showOne($model);
     }
