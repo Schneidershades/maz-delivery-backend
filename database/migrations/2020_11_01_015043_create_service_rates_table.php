@@ -15,6 +15,8 @@ class CreateServiceRatesTable extends Migration
     {
         Schema::create('service_rates', function (Blueprint $table) {
             $table->id();
+            $table->integer('settingable_id')->nullable();
+            $table->string('settingable_type')->nullable();
             $table->string('type')->nullable();
             $table->double('rate', 13, 2)->default(0);
             $table->double('cap_max_rate', 13, 2)->default(0);

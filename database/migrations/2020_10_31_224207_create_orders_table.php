@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             
             $table->string('identifier')->nullable();
-            $table->foreignId('user_id')->constrained('users')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->double('amount',13,2)->default(0);
             $table->double('rydecoin',13,2)->default(0);
             $table->integer('orderable_id')->nullable();

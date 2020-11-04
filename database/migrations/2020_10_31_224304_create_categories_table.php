@@ -18,7 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('identifier')->nullable();
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
-            $table->foreignId('vehicle_id')->constrained('vehicles')->nullable();
+            $table->foreignId('vehicle_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
