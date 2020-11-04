@@ -68,10 +68,10 @@ class ErrandController extends ApiController
     *          @OA\MediaType(
     *             mediaType="application/json",
     *         ),
-    *          response=400,
-    *          description="Bad Request"
     *       ),
     *      @OA\Response(
+    *          response=400,
+    *          description="Bad Request"
     *      ),
     *      @OA\Response(
     *          response=401,
