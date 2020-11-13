@@ -15,6 +15,7 @@ class CreateRequestVansTable extends Migration
     {
         Schema::create('request_vans', function (Blueprint $table) {
             $table->id();
+            $table->string('service_rates_id')->nullable();
             $table->string('vehicle')->nullable();
             $table->string('details')->nullable();
             $table->timestamps();

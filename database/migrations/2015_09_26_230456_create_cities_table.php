@@ -18,8 +18,8 @@ class CreateCitiesTable extends Migration
             $table->string('name')->nullable();
             $table->string('lat')->nullable();
             $table->string('lng')->nullable();
-            $table->bigInteger('state_id')->unsigned()->nullable();
-            $table->bigInteger('country_id')->unsigned()->nullable();
+            $table->foreignId('state_id')->nullable();
+            $table->foreignId('country_id')->nullable();
             $table->timestamps();
 
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');

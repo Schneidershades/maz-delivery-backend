@@ -3145,6 +3145,32 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "name": {
+                        "title": "User First Name",
+                        "description": "First name of the user",
+                        "type": "string",
+                        "example": "Nnamdi"
+                    },
+                    "address": {
+                        "title": "User Address",
+                        "description": "Address of the user",
+                        "type": "string",
+                        "example": "No 4 Gang street"
+                    },
+                    "phone": {
+                        "title": "User phone",
+                        "description": "phone of the user",
+                        "type": "string",
+                        "example": "password"
+                    },
+                    "city": {
+                        "title": "User City",
+                        "description": "City of the user",
+                        "type": "integer",
+                        "example": "1"
+                    }
+                },
                 "type": "object"
             },
             "AddressUpdateFormRequest": {
@@ -3153,6 +3179,32 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "name": {
+                        "title": "User First Name",
+                        "description": "First name of the user",
+                        "type": "string",
+                        "example": "Nnamdi"
+                    },
+                    "address": {
+                        "title": "User Address",
+                        "description": "Address of the user",
+                        "type": "string",
+                        "example": "No 4 Gang street"
+                    },
+                    "phone": {
+                        "title": "User phone",
+                        "description": "phone of the user",
+                        "type": "string",
+                        "example": "password"
+                    },
+                    "city": {
+                        "title": "User City",
+                        "description": "City of the user",
+                        "type": "integer",
+                        "example": "1"
+                    }
+                },
                 "type": "object"
             },
             "BankCreateFormRequest": {
@@ -3351,22 +3403,6 @@
                         }
                     }
                 },
-                "type": "object"
-            },
-            "ErrandTaskCreateFormRequest": {
-                "title": "Errand Task Create Form Request Fields",
-                "description": "Errand Task Create request body data",
-                "required": [
-                    "first_name"
-                ],
-                "type": "object"
-            },
-            "ErrandTaskUpdateFormRequest": {
-                "title": "Errand Task Update Form Request Fields",
-                "description": "Errand Task Update request body data",
-                "required": [
-                    "first_name"
-                ],
                 "type": "object"
             },
             "ErrandUpdateFormRequest": {

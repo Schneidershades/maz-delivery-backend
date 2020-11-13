@@ -15,7 +15,7 @@ class CreateCartsTable extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id')->constrained('orders')->nullable();
+            $table->foreignId('order_id')->nullable();
             $table->text('address')->nullable();
             $table->string('state')->nullable();
             $table->integer('number')->nullable();

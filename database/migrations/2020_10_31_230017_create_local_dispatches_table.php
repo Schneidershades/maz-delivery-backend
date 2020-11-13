@@ -15,7 +15,7 @@ class CreateLocalDispatchesTable extends Migration
     {
         Schema::create('local_dispatches', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained('categories')->nullable();
+            $table->foreignId('category_id')->nullable();
             $table->integer('quantity')->nullable();
             $table->integer('weight')->nullable();
             $table->string('note')->nullable();

@@ -15,7 +15,7 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->integer('order_id')->nullable();
+            $table->foreignId('order_id')->nullable();
 
             $table->double('amount', 13, 2)->default(0);
             $table->string('currency')->nullable();

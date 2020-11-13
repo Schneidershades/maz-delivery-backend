@@ -18,9 +18,10 @@ class CreateAddressesTable extends Migration
             $table->string('name')->nullable();
             $table->text('address')->nullable();
             $table->string('phone')->nullable();
-            $table->foreignId('city_id')->constrained('states')->nullable();
-            $table->foreignId('state_id')->constrained('states')->nullable();
-            $table->foreignId('country_id')->constrained('countries')->nullable();
+            $table->foreignId('user_id')->nullable();
+            $table->foreignId('city_id')->nullable();
+            $table->foreignId('state_id')->nullable();
+            $table->foreignId('country_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
