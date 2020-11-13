@@ -50,7 +50,7 @@ Route::prefix('v1')->group(function () {
 	});
 
 	Route::group(['namespace' => 'Api\Rydecoin'], function(){
-		Route::resource('rydecoins', 'RydecoinController');
+		Route::resource('rydecoin-package', 'RydecoinPackageController');
 	});
 
 	Route::group(['namespace' => 'Api\Rate'], function(){

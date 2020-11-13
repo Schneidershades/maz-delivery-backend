@@ -15,12 +15,12 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->integer('paymentable_id')->nullable();
-            $table->string('paymentable_type')->nullable();
+            $table->integer('order_id')->nullable();
 
             $table->double('amount', 13, 2)->default(0);
             $table->string('currency')->nullable();
-
+            
+            $table->string('type')->nullable();
             $table->string('payment_method')->nullable();
             $table->string('payment_gateway')->nullable();
             $table->float('payment_gateway_charged_percentage')->nullable();

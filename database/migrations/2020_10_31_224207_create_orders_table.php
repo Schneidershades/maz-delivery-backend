@@ -23,10 +23,14 @@ class CreateOrdersTable extends Migration
             $table->string('orderable_type')->nullable();
             $table->integer('dispatch_id')->nullable();
             $table->string('dispatch_status')->default('pending')->nullable();
+            $table->string('payment_status')->default('pending')->nullable();
             $table->text('note')->nullable();
             $table->text('rating')->nullable();
             $table->text('user_comment')->nullable();
             $table->text('dispatch_comment')->nullable();
+            $table->boolean('demurrage')->default(false);
+            $table->integer('demurrage_timeout_d')->default(3600);
+            $table->double('false', 13, 2)->default(0);
             $table->softDeletes();
             $table->timestamps();
         });
