@@ -68,6 +68,7 @@ class OrderService implements ServiceInterface
             'orderable_type' => $outsideModel->getTable(),
             'rydecoin' => $rydecoinAmount,
             'amount' => $serviceItem->rate,
+            'user_id' => auth()->user()->id,
         ];
 
         return $this->repository->requestAndDbIntersection($request, $order, [], $item);
