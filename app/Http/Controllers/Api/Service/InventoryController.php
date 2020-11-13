@@ -235,7 +235,8 @@ class InventoryController extends ApiController
     */
     public function destroy($id)
     {
-        $model = Inventory::find($id)->delete();
+        $model = Inventory::find($id);
+        $model->delete();
         return $this->showMessage('Inventory Deleted');
     }
 }

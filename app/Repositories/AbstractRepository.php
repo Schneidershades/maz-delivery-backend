@@ -228,9 +228,7 @@ class AbstractRepository implements RepositoryInterface
     }
 
     public function requestAndDbIntersection($request, $model, array $excludeFieldsForLogic = [], array $includeFields = [])
-    {
-        return $request->all();
-        
+    {        
         $excludeColumns = array_diff($request->all(), $excludeFieldsForLogic);
         
         $allReadyColumns = array_merge($excludeColumns, $includeFields);
@@ -242,7 +240,7 @@ class AbstractRepository implements RepositoryInterface
         $fields = array_intersect($requestColumns, $tableColumns);
 
         foreach($fields as $field){
-            $model->{$field} = $request[$field];
+            $model->{$field} = $allReadyColumns[$field];
         }
 
         return $model;

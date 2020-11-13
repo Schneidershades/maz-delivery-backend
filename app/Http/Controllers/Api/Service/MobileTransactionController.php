@@ -235,7 +235,8 @@ class MobileTransactionController extends ApiController
     */
     public function destroy($id)
     {
-        $model = MobileTransaction::find($id)->delete();
+        $model = MobileTransaction::find($id);
+        $model->delete();
         return $this->showMessage('MobileTransaction Deleted');
     }
 }

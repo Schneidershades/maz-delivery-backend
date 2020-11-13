@@ -36,19 +36,20 @@ class ApiController extends Controller
     //     return $model;
     // }
 
-    public function requestAndDbIntersection($request, $model, array $excludeFieldsForLogic = []){
-        $requestColumns = array_keys($request->all());
+    public function requestAndDbIntersection($request, $model, array $excludeFieldsForLogic = [], array $includeFields = [])
+    {        
+        $excludeColumns = array_diff($request->all(), $excludeFieldsForLogic);
+        
+        $allReadyColumns = array_merge($excludeColumns, $includeFields);
 
-        $model = $model;
+        $requestColumns = array_keys($allReadyColumns);
 
         $tableColumns = $this->getColumns($model->getTable());
 
         $fields = array_intersect($requestColumns, $tableColumns);
 
-        $items = [];
-
         foreach($fields as $field){
-            $model->{$field} = $request[$field];
+            $model->{$field} = $allReadyColumns[$field];
         }
 
         return $model;

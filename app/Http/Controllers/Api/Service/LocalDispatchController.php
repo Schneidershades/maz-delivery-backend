@@ -235,7 +235,8 @@ class LocalDispatchController extends ApiController
     */
     public function destroy($id)
     {
-        $model = LocalDispatch::find($id)->delete();
+        $model = LocalDispatch::find($id);
+        $model->delete();
         return $this->showMessage('LocalDispatch Deleted');
     }
 }

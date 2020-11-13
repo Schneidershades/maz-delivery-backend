@@ -234,7 +234,8 @@ class RequestVanController extends ApiController
     */
     public function destroy($id)
     {
-        $model = RequestVan::find($id)->delete();
+        $model = RequestVan::find($id);
+        $model->delete();
         return $this->showMessage('RequestVan Deleted');
     }
 }

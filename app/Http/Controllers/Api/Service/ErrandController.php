@@ -92,7 +92,6 @@ class ErrandController extends ApiController
         $model = $this->requestAndDbIntersection($request, $model);
         $model->save();
         $model = $this->service->register($request, $model);
-        return $model;
         return $this->showOne($model);
     }
 
@@ -191,7 +190,7 @@ class ErrandController extends ApiController
     public function update(ErrandUpdateFormRequest $request, $id)
     {
         $model = Errand::find($id);
-    	$model = $this->requestAndDbIntersection($request, $model);
+        $model = $this->requestAndDbIntersection($request, $model);
         $model->save();
         $model = $this->service->register($request, $model);
         return $this->showOne($model);
@@ -238,7 +237,8 @@ class ErrandController extends ApiController
     */
     public function destroy($id)
     {
-        $model = Errand::find($id)->delete();
+        $model = Errand::find($id);
+        $model->delete();
         return $this->showMessage('Errand Deleted');
     }
 }
