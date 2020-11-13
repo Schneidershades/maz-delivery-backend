@@ -10,6 +10,13 @@ use App\Http\Requests\Service\ErrandCreateFormRequest;
 
 class ErrandController extends ApiController
 {
+    private $service;
+
+    public function __construct(OrderService $service)
+    {
+        $this->service = $service;
+    }
+
     /**
     * @OA\Get(
     *      path="/api/v1/errand",
@@ -81,10 +88,11 @@ class ErrandController extends ApiController
     */
     public function store(ErrandCreateFormRequest $request)
     {
-    	$model = new Errand;
-    	$model = $this->requestAndDbIntersection($request, $model);
-        $model = $model->save();
-        $model = (new OrderService())->register($request, $model);
+        $model = new Errand;
+        $model = $this->requestAndDbIntersection($request, $model);
+        $model->save();
+        $model = $this->service->register($request, $model);
+        return $model;
         return $this->showOne($model);
     }
 
@@ -184,8 +192,8 @@ class ErrandController extends ApiController
     {
         $model = Errand::find($id);
     	$model = $this->requestAndDbIntersection($request, $model);
-        $model = $model->save();
-        $model = $this->service->register($request, $model, $id);
+        $model->save();
+        $model = $this->service->register($request, $model);
         return $this->showOne($model);
     }
 

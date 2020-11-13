@@ -5,19 +5,62 @@ use App\Models\Order;
 use Illuminate\Support\Facades\Schema;
 use App\Repositories\Interfaces\OrderRepositoryInterface;
 
-class OrderService
+class OrderService implements ServiceInterface
 {
+    /**
+     * @var OrderRepositoryInterface
+     */
+    private $repository;
+
+    public function __construct(
+        OrderRepositoryInterface $repository
+    ) 
+    {
+        $this->repository = $repository;
+    }
+
     public function register($request, $model, $id = null)
     {
-        return ($request);
+        $order = Order::where('orderable_type', $model->getTable())
+                    ->where('orderable_id', $model->id)
+                    ->first();
 
-        if($id!=null){
-            $model = $this->repository->find($id);
+        if($order == null){
+            $content = new Order;
+
+            $lastOrder = Order::latest()->first();
+
+            if($lastOrder != null){
+                $number = 10000 + $lastOrder->id;
+            }else{
+                $number = 10000;
+            }
+
+            $item = [
+                'identifier' => '#ORD'.$number,
+                'orderable_id' => $model->id,
+                'orderable_type' => $model->getTable()
+            ];
+
+
+            return $rr = $this->repository->requestAndDbIntersection($request, $content, [], $item);
+
+            
+        }else{
+            $item = [];
+            $content = $this->repository->find($order->id);
         }
 
-        $item = $this->hydrateRequest($request, $model);
+        // return $rr;
 
-        return $this->repository->save($item);
+        // $rr = $rr->save();
+
+        // return $rr;
+        // return $item = $this->hydrateRequest($request, $model);
+
+        // $item = $item->save();
+
+        // return $item;
     }
     /**
      * @param Request $request
@@ -25,20 +68,6 @@ class OrderService
      */
     protected function hydrateRequest($request, $model)
     {
-        $lastOrder = Order::latest()->first();
 
-        if($lastOrder != null){
-            $number = 10000 + $lastOrder ? (int)$lastOrder->id : 0;
-        }else{
-            $number = 10000;
-        }        
-
-        $item = [
-            'identifier' => '#ORD'. $number,
-            'orderable_id' => $model->id,
-            'orderable_type' => $model->getTable()
-        ];
-
-        return $this->repository->requestAndDbIntersection($request, $model, [], $item);
     }
 }

@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Exceptions\ModelNotFoundException;
-use App\Exceptions\ItemNotFoundHttpException;
+// use App\Exceptions\ModelNotFoundException;
+// use App\Exceptions\ItemNotFoundHttpException;
 use App\Repositories\Interfaces\RepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -43,18 +43,18 @@ class AbstractRepository implements RepositoryInterface
     public function results($result)
     {
         if ($result == null) {
-            throw new ItemNotFoundHttpException(
-                'the item was not found in '. strtolower(class_basename($this->getModel())) . ' table'
-            );
+            // throw new ItemNotFoundHttpException(
+            //     'the item was not found in '. strtolower(class_basename($this->getModel())) . ' table'
+            // );
         }
     }
 
     public function items($criteria)
     {
         if (empty($criteria)) {
-            throw new \InvalidArgumentException(
-                'paramter(s) you are sending cannot be an empty array.'
-            );
+            // throw new \InvalidArgumentException(
+            //     'paramter(s) you are sending cannot be an empty array.'
+            // );
         }
     }
 
@@ -175,15 +175,15 @@ class AbstractRepository implements RepositoryInterface
      */
     public function updateBy(array $condition, array $replacementValue): int
     {
-        if (empty($condition)) {
-            throw new \InvalidArgumentException('$condition cannot be empty');
-        }
+        // if (empty($condition)) {
+        //     throw new \InvalidArgumentException('$condition cannot be empty');
+        // }
 
-        if (empty($replacementValue)) {
-            throw new \InvalidArgumentException('$replacementValue cannot be empty');
-        }
+        // if (empty($replacementValue)) {
+        //     throw new \InvalidArgumentException('$replacementValue cannot be empty');
+        // }
 
-        return $this->getModel()->where($condition)->update($replacementValue);
+        // return $this->getModel()->where($condition)->update($replacementValue);
     }
 
     protected function getModel(): Model
@@ -229,6 +229,8 @@ class AbstractRepository implements RepositoryInterface
 
     public function requestAndDbIntersection($request, $model, array $excludeFieldsForLogic = [], array $includeFields = [])
     {
+        return $request->all();
+        
         $excludeColumns = array_diff($request->all(), $excludeFieldsForLogic);
         
         $allReadyColumns = array_merge($excludeColumns, $includeFields);
@@ -240,7 +242,7 @@ class AbstractRepository implements RepositoryInterface
         $fields = array_intersect($requestColumns, $tableColumns);
 
         foreach($fields as $field){
-            $model->setAttribute($field, $allReadyColumns[$field]);
+            $model->{$field} = $request[$field];
         }
 
         return $model;

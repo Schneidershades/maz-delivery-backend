@@ -9,7 +9,7 @@ use App\Models\Address;
 class AddressController extends ApiController
 {
     
-        /**
+    /**
     * @OA\Get(
     *      path="/api/v1/addresses",
     *      operationId="addressLists",

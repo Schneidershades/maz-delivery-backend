@@ -88,7 +88,7 @@ class InventoryController extends ApiController
     {
     	$model = new Inventory;
     	$model = $this->requestAndDbIntersection($request, $model);
-        $model = $model->save();
+        $model->save();
         $model = $this->service->register($request, $model);
         return $this->showOne($model);
     }
@@ -189,8 +189,8 @@ class InventoryController extends ApiController
     {
         $model = Inventory::find($id);
     	$model = $this->requestAndDbIntersection($request, $model);
-        $model = $model->save();
-        $model = $this->service->register($request, $model, $id);
+        $model->save();
+        $model = $this->service->register($request, $model);
         return $this->showOne($model);
     }
 
