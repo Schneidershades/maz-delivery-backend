@@ -15,6 +15,37 @@ use Illuminate\Foundation\Http\FormRequest;
 class BankDetailCreateFormRequest extends FormRequest
 {
     /**
+     * @OA\Property(
+     *      title="Bank title",
+     *      description="title of the Bank",
+     *      example="password"
+     * )
+     *
+     * @var string
+     */
+    public $name;
+    /**
+     * @OA\Property(
+     *      title="Bank number",
+     *      description="number of the Bank",
+     *      example="password"
+     * )
+     *
+     * @var string
+     */
+    public $number;
+
+    /**
+     * @OA\Property(
+     *      title="Bank Id",
+     *      description="Bank Id",
+     *      example="1"
+     * )
+     *
+     * @var int
+     */
+    public $bank_id;
+    /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
@@ -32,7 +63,9 @@ class BankDetailCreateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'number' => 'required|string|max:255',
+            'bank_id' => 'required|int|exists:banks,id',
         ];
     }
 }

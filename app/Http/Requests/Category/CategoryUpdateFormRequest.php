@@ -16,6 +16,28 @@ use Illuminate\Foundation\Http\FormRequest;
 class CategoryUpdateFormRequest extends FormRequest
 {
     /**
+     * @OA\Property(
+     *      title="Category name",
+     *      description="name of the Category",
+     *      example="password"
+     * )
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @OA\Property(
+     *      title="Vehicle Id",
+     *      description="Vehicle Id",
+     *      example="1"
+     * )
+     *
+     * @var int
+     */
+    public $vehicle_id;
+
+    /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
@@ -33,7 +55,8 @@ class CategoryUpdateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'vehicle_id' => 'required|int|exists:vehicles,id',
         ];
     }
 }

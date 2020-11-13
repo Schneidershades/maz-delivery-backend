@@ -56,7 +56,7 @@ class AddressUpdateFormRequest extends FormRequest
      *
      * @var int
      */
-    public $city;
+    public $city_id;
     
     /**
      * Determine if the user is authorized to make this request.

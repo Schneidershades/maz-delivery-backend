@@ -58,7 +58,7 @@ class AddressCreateFormRequest extends FormRequest
      *
      * @var int
      */
-    public $city;
+    public $city_id;
 
     /**
      * Determine if the user is authorized to make this request.
@@ -81,7 +81,7 @@ class AddressCreateFormRequest extends FormRequest
             'name' => 'required|string|max:255',
             'address' => 'required|string',
             'phone' => 'required|string|max:15',
-            // 'city_id' => 'required|int|exists:cities,id',
+            'city_id' => 'required|int|exists:cities,id',
         ];
     }
 }
