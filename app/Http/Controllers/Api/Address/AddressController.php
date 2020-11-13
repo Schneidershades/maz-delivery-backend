@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api\Address;
 use App\Http\Controllers\Api\ApiController;
 use Illuminate\Http\Request;
 use App\Models\Address;
+use App\Http\Requests\Address\AddressCreateFormRequest;
+use App\Http\Requests\Address\AddressUpdateFormRequest;
 
 class AddressController extends ApiController
 {
@@ -41,7 +43,7 @@ class AddressController extends ApiController
 
     public function index()
     {        
-        return $this->showAll(auth()->addresses());
+        return $this->showAll(auth()->user()->addresses);
     }
 
     /**
