@@ -16,14 +16,14 @@ class RydecoinPackageTableSeeder extends Seeder
     {
         RydecoinPackage::create([
     		'name'=>'Basic',
-    		'identifier'=>'#Ryd3922',
+    		'identifier'=>'#Ryd3920',
             'rydecoin'=> 10,
             'amount'=> 1000
     	]);
 
         RydecoinPackage::create([
             'name'=>'Gold',
-            'identifier'=>'#Ryd3922',
+            'identifier'=>'#Ryd3921',
             'rydecoin'=> 50,
             'amount'=> 3000
         ]);
