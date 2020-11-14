@@ -55,7 +55,7 @@ class MobileTransactionController extends ApiController
     * @OA\Post(
     *      path="/api/v1/mobile-transaction",
     *      operationId="mobileTransactionCreate",
-    *      tags={"mobileTransaction"},
+    *      tags={"user"},
     *      summary="Post New MobileTransaction",
     *      description="Post New MobileTransaction",
     *      @OA\RequestBody(

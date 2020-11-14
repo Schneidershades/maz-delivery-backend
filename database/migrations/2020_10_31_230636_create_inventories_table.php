@@ -15,10 +15,12 @@ class CreateInventoriesTable extends Migration
     {
         Schema::create('inventories', function (Blueprint $table) {
             $table->id();
-            $table->string('service_rates_id')->nullable();
+            $table->foreignId('service_rates_id')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->string('identifier')->nullable();
             $table->string('name')->nullable();
-            $table->foreignId('category_id')->constrained('categories')->nullable();
+            $table->double('rate', 13, 2)->default(0);
+            $table->foreignId('category_id')->nullable();
             $table->timestamps();
         });
     }

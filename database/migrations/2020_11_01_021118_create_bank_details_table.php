@@ -19,6 +19,7 @@ class CreateBankDetailsTable extends Migration
             $table->foreignId('user_id')->nullable();
             $table->string('name')->nullable();
             $table->string('number')->nullable();
+            $table->boolean('save')->default(false);
             $table->timestamps();
         });
     }

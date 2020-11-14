@@ -18,9 +18,11 @@ class CreateErrandTasksTable extends Migration
             $table->foreignId('order_id')->nullable();
             $table->string('name')->nullable();
             $table->string('address')->nullable();
+            $table->string('phone')->nullable();
             $table->string('instructions')->nullable();
             $table->string('date')->nullable();
             $table->string('time')->nullable();
+            $table->boolean('save')->default(false);
             $table->timestamps();
         });
     }

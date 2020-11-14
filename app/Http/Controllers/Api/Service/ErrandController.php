@@ -56,7 +56,7 @@ class ErrandController extends ApiController
     * @OA\Post(
     *      path="/api/v1/errand",
     *      operationId="errandCreate",
-    *      tags={"errand"},
+    *      tags={"user"},
     *      summary="Post New Errand",
     *      description="Post New Errand",
     *      @OA\RequestBody(

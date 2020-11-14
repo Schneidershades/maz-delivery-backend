@@ -55,7 +55,7 @@ class InventoryController extends ApiController
     * @OA\Post(
     *      path="/api/v1/inventory",
     *      operationId="inventoryCreate",
-    *      tags={"inventory"},
+    *      tags={"user"},
     *      summary="Post New Inventory",
     *      description="Post New Inventory",
     *      @OA\RequestBody(

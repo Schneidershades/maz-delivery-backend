@@ -55,7 +55,7 @@ class LocalDispatchController extends ApiController
     * @OA\Post(
     *      path="/api/v1/local-dispatch",
     *      operationId="localDispatchCreate",
-    *      tags={"localDispatch"},
+    *      tags={"user"},
     *      summary="Post New LocalDispatch",
     *      description="Post New LocalDispatch",
     *      @OA\RequestBody(

@@ -1749,7 +1749,7 @@
             },
             "post": {
                 "tags": [
-                    "errand"
+                    "user"
                 ],
                 "summary": "Post New Errand",
                 "description": "Post New Errand",
@@ -1956,7 +1956,7 @@
             },
             "post": {
                 "tags": [
-                    "inventory"
+                    "user"
                 ],
                 "summary": "Post New Inventory",
                 "description": "Post New Inventory",
@@ -2163,7 +2163,7 @@
             },
             "post": {
                 "tags": [
-                    "localDispatch"
+                    "user"
                 ],
                 "summary": "Post New LocalDispatch",
                 "description": "Post New LocalDispatch",
@@ -2370,7 +2370,7 @@
             },
             "post": {
                 "tags": [
-                    "mobileTransaction"
+                    "user"
                 ],
                 "summary": "Post New MobileTransaction",
                 "description": "Post New MobileTransaction",
@@ -2577,7 +2577,7 @@
             },
             "post": {
                 "tags": [
-                    "requestVan"
+                    "user"
                 ],
                 "summary": "Post New RequestVan",
                 "description": "Post New RequestVan",
@@ -3601,12 +3601,18 @@
                 ],
                 "properties": {
                     "service_rates_id": {
-                        "title": "User email",
-                        "description": "Email of the user",
+                        "title": "Service Rate Id",
+                        "description": "Service Rate Id",
                         "type": "integer",
                         "example": "1"
                     },
-                    "task": {
+                    "address_id": {
+                        "title": "Address Id",
+                        "description": "Address Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "address": {
                         "type": "array",
                         "items": {
                             "properties": {
@@ -3616,7 +3622,43 @@
                                 },
                                 "address": {
                                     "type": "string",
-                                    "example": "I need Something"
+                                    "example": "No 5 Jesus Street"
+                                },
+                                "phone": {
+                                    "type": "string",
+                                    "example": "09038449333"
+                                },
+                                "order_of_movement": {
+                                    "type": "string",
+                                    "example": "1"
+                                },
+                                "city_id": {
+                                    "type": "int",
+                                    "example": "1"
+                                },
+                                "save": {
+                                    "type": "boolean",
+                                    "example": "false"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "task": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": "Go to Market"
+                                },
+                                "phone": {
+                                    "type": "string",
+                                    "example": "09038449333"
+                                },
+                                "address": {
+                                    "type": "string",
+                                    "example": "No 5 Gang Street"
                                 },
                                 "instructions": {
                                     "type": "string",
@@ -3651,6 +3693,26 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "service_rates_id": {
+                        "title": "Service Rate Id",
+                        "description": "Service Rate Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "category_id": {
+                        "title": "Category Id",
+                        "description": "Category Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "name": {
+                        "title": "name",
+                        "description": "name",
+                        "type": "integer",
+                        "example": "1"
+                    }
+                },
                 "type": "object"
             },
             "InventoryUpdateFormRequest": {
@@ -3667,6 +3729,106 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "service_rates_id": {
+                        "title": "Service Rate Id",
+                        "description": "Service Rate Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "local_dispatable_id": {
+                        "title": "local_dispatable Id",
+                        "description": "local_dispatable Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "local_dispatable_type": {
+                        "title": "local_dispatable type",
+                        "description": "local_dispatable type",
+                        "type": "integer",
+                        "example": "category/inventory"
+                    },
+                    "quantity": {
+                        "title": "quantity ",
+                        "description": "quantity ",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "weight": {
+                        "title": "weight ",
+                        "description": "weight ",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "note": {
+                        "title": "note",
+                        "description": "note",
+                        "type": "string",
+                        "example": "1"
+                    },
+                    "instruction": {
+                        "title": "instruction",
+                        "description": "instruction",
+                        "type": "string",
+                        "example": "1"
+                    },
+                    "date": {
+                        "title": "date",
+                        "description": "date",
+                        "type": "string",
+                        "example": "1"
+                    },
+                    "time": {
+                        "title": "time",
+                        "description": "time",
+                        "type": "string",
+                        "example": "1"
+                    },
+                    "instant": {
+                        "title": "instant",
+                        "description": "instant",
+                        "type": "boolean",
+                        "example": "false"
+                    },
+                    "address_id": {
+                        "title": "Address Id",
+                        "description": "Address Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "address": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": "Go to Market"
+                                },
+                                "address": {
+                                    "type": "string",
+                                    "example": "No 5 Jesus Street"
+                                },
+                                "phone": {
+                                    "type": "string",
+                                    "example": "09038449333"
+                                },
+                                "order_of_movement": {
+                                    "type": "string",
+                                    "example": "1"
+                                },
+                                "city_id": {
+                                    "type": "int",
+                                    "example": "1"
+                                },
+                                "save": {
+                                    "type": "boolean",
+                                    "example": "false"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                },
                 "type": "object"
             },
             "LocalDispatchUpdateFormRequest": {
@@ -3683,6 +3845,82 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "service_rates_id": {
+                        "title": "Service Rate Id",
+                        "description": "Service Rate Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "bank_detail_id": {
+                        "title": "Bank Details Id",
+                        "description": "Bank Details Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "bank_details": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "bank_id": {
+                                    "type": "int",
+                                    "example": "1"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Oshie Ven"
+                                },
+                                "number": {
+                                    "type": "string",
+                                    "example": "09038449333"
+                                },
+                                "save": {
+                                    "type": "boolean",
+                                    "example": "false"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "address_id": {
+                        "title": "Address Id",
+                        "description": "Address Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "address": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": "Go to Market"
+                                },
+                                "address": {
+                                    "type": "string",
+                                    "example": "No 5 Jesus Street"
+                                },
+                                "phone": {
+                                    "type": "string",
+                                    "example": "09038449333"
+                                },
+                                "order_of_movement": {
+                                    "type": "string",
+                                    "example": "1"
+                                },
+                                "city_id": {
+                                    "type": "int",
+                                    "example": "1"
+                                },
+                                "save": {
+                                    "type": "boolean",
+                                    "example": "false"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                },
                 "type": "object"
             },
             "MobileTransactionUpdateFormRequest": {
@@ -3699,6 +3937,52 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "service_rates_id": {
+                        "title": "Service Rate Id",
+                        "description": "Service Rate Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "vehicle_id": {
+                        "title": "vehicle Id",
+                        "description": "vehicle Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "address": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": "Go to Market"
+                                },
+                                "address": {
+                                    "type": "string",
+                                    "example": "No 5 Jesus Street"
+                                },
+                                "phone": {
+                                    "type": "string",
+                                    "example": "09038449333"
+                                },
+                                "order_of_movement": {
+                                    "type": "string",
+                                    "example": "1"
+                                },
+                                "city_id": {
+                                    "type": "int",
+                                    "example": "1"
+                                },
+                                "save": {
+                                    "type": "boolean",
+                                    "example": "false"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                },
                 "type": "object"
             },
             "RequestVanUpdateFormRequest": {

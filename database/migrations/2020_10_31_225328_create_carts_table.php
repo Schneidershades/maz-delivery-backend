@@ -16,9 +16,9 @@ class CreateCartsTable extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('order_id')->nullable();
-            $table->text('address')->nullable();
-            $table->string('state')->nullable();
-            $table->integer('number')->nullable();
+            $table->integer('cartable_id')->nullable();
+            $table->text('cartable_type')->nullable();
+            $table->string('order_of_movement')->nullable();
             $table->string('status')->nullable();
             $table->softDeletes();
             $table->timestamps();

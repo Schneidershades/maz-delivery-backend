@@ -22,6 +22,7 @@ class CreateAddressesTable extends Migration
             $table->foreignId('city_id')->nullable();
             $table->foreignId('state_id')->nullable();
             $table->foreignId('country_id')->nullable();
+            $table->boolean('save')->default(false);
             $table->softDeletes();
             $table->timestamps();
         });

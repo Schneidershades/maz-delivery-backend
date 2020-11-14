@@ -15,10 +15,16 @@ class CreateLocalDispatchesTable extends Migration
     {
         Schema::create('local_dispatches', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->nullable();
+            $table->foreignId('service_rates_id')->nullable();
+            $table->integer('local_dispatable_id')->nullable();
+            $table->string('local_dispatable_type')->nullable();
             $table->integer('quantity')->nullable();
             $table->integer('weight')->nullable();
             $table->string('note')->nullable();
+            $table->string('instructions')->nullable();
+            $table->string('date')->nullable();
+            $table->string('time')->nullable();
+            $table->boolean('instant')->default(false);
             $table->timestamps();
         });
     }

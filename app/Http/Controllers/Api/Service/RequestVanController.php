@@ -54,7 +54,7 @@ class RequestVanController extends ApiController
     * @OA\Post(
     *      path="/api/v1/request-van",
     *      operationId="requestVanCreate",
-    *      tags={"requestVan"},
+    *      tags={"user"},
     *      summary="Post New RequestVan",
     *      description="Post New RequestVan",
     *      @OA\RequestBody(
