@@ -39,7 +39,7 @@ class ServiceRateCreateFormRequest extends FormRequest
      *
      * @var string
      */
-    public $settingable_id;
+    public $settingable_type;
     /**
      * @OA\Property(
      *      title="type",

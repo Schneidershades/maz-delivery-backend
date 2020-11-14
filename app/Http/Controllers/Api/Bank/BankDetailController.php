@@ -41,7 +41,7 @@ class BankDetailController extends ApiController
 
     public function index()
     {        
-        return $this->showAll(auth()->bankDetails());
+        return $this->showAll(auth()->user()->bankDetails);
     }
 
     /**

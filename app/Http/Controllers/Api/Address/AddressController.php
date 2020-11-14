@@ -15,7 +15,7 @@ class AddressController extends ApiController
     * @OA\Get(
     *      path="/api/v1/addresses",
     *      operationId="addressLists",
-    *      tags={"address"},
+    *      tags={"user"},
     *      summary="Get All Address",
     *      description="Get All Address",
     *      @OA\Response(
@@ -50,7 +50,7 @@ class AddressController extends ApiController
     * @OA\Post(
     *      path="/api/v1/addresses",
     *      operationId="addressCreateAddress",
-    *      tags={"address"},
+    *      tags={"user"},
     *      summary="Post New Address",
     *      description="Post New Address",
     *      @OA\RequestBody(
@@ -92,7 +92,7 @@ class AddressController extends ApiController
     * @OA\Get(
     *      path="/api/v1/addresses/{id}",
     *      operationId="addressDetails",
-    *      tags={"address"},
+    *      tags={"user"},
     *      summary="Show an Address",
     *      description="Show an Address",
     *      
@@ -139,7 +139,7 @@ class AddressController extends ApiController
     * @OA\PUT(
     *      path="/api/v1/addresses/{id}",
     *      operationId="addressUpdateAddress",
-    *      tags={"address"},
+    *      tags={"user"},
     *      summary="Update an Address",
     *      description="Update an Address",
     *      
@@ -191,7 +191,7 @@ class AddressController extends ApiController
     * @OA\Delete(
     *      path="/api/v1/addresses/{id}",
     *      operationId="addressDeleteAddress",
-    *      tags={"address"},
+    *      tags={"user"},
     *      summary="Delete an Address",
     *      description="Delete an Address",
     *      

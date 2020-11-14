@@ -16,7 +16,7 @@
         "/api/v1/addresses": {
             "get": {
                 "tags": [
-                    "address"
+                    "user"
                 ],
                 "summary": "Get All Address",
                 "description": "Get All Address",
@@ -46,7 +46,7 @@
             },
             "post": {
                 "tags": [
-                    "address"
+                    "user"
                 ],
                 "summary": "Post New Address",
                 "description": "Post New Address",
@@ -88,7 +88,7 @@
         "/api/v1/addresses/{id}": {
             "get": {
                 "tags": [
-                    "address"
+                    "user"
                 ],
                 "summary": "Show an Address",
                 "description": "Show an Address",
@@ -129,7 +129,7 @@
             },
             "put": {
                 "tags": [
-                    "address"
+                    "user"
                 ],
                 "summary": "Update an Address",
                 "description": "Update an Address",
@@ -180,7 +180,7 @@
             },
             "delete": {
                 "tags": [
-                    "address"
+                    "user"
                 ],
                 "summary": "Delete an Address",
                 "description": "Delete an Address",
@@ -223,7 +223,7 @@
         "/api/v1/banks": {
             "get": {
                 "tags": [
-                    "bank"
+                    "general"
                 ],
                 "summary": "Get All Bank",
                 "description": "Get All Bank",
@@ -253,7 +253,7 @@
             },
             "post": {
                 "tags": [
-                    "bank"
+                    "admin"
                 ],
                 "summary": "Post New Bank",
                 "description": "Post New Bank",
@@ -637,7 +637,7 @@
         "/api/v1/categories": {
             "get": {
                 "tags": [
-                    "categories"
+                    "general"
                 ],
                 "summary": "Get All Category",
                 "description": "Get All Category",
@@ -982,7 +982,7 @@
         "/api/v1/order": {
             "get": {
                 "tags": [
-                    "order"
+                    "user"
                 ],
                 "summary": "Get All Order",
                 "description": "Get All Order",
@@ -1014,7 +1014,7 @@
         "/api/v1/order/{id}": {
             "get": {
                 "tags": [
-                    "order"
+                    "user"
                 ],
                 "summary": "Show an Order",
                 "description": "Show an Order",
@@ -1055,7 +1055,7 @@
             },
             "delete": {
                 "tags": [
-                    "order"
+                    "user"
                 ],
                 "summary": "Delete an Order",
                 "description": "Delete an Order",
@@ -3164,7 +3164,7 @@
                         "type": "string",
                         "example": "password"
                     },
-                    "city": {
+                    "city_id": {
                         "title": "User City",
                         "description": "City of the user",
                         "type": "integer",
@@ -3198,7 +3198,7 @@
                         "type": "string",
                         "example": "password"
                     },
-                    "city": {
+                    "city_id": {
                         "title": "User City",
                         "description": "City of the user",
                         "type": "integer",
@@ -3221,6 +3221,26 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "name": {
+                        "title": "Bank title",
+                        "description": "title of the Bank",
+                        "type": "string",
+                        "example": "password"
+                    },
+                    "number": {
+                        "title": "Bank number",
+                        "description": "number of the Bank",
+                        "type": "string",
+                        "example": "password"
+                    },
+                    "bank_id": {
+                        "title": "Bank Id",
+                        "description": "Bank Id",
+                        "type": "integer",
+                        "example": "1"
+                    }
+                },
                 "type": "object"
             },
             "BankDetailUpdateFormRequest": {
@@ -3229,6 +3249,26 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "name": {
+                        "title": "Bank title",
+                        "description": "title of the Bank",
+                        "type": "string",
+                        "example": "password"
+                    },
+                    "number": {
+                        "title": "Bank number",
+                        "description": "number of the Bank",
+                        "type": "string",
+                        "example": "password"
+                    },
+                    "bank_id": {
+                        "title": "Bank Id",
+                        "description": "Bank Id",
+                        "type": "integer",
+                        "example": "1"
+                    }
+                },
                 "type": "object"
             },
             "BankUpdateFormRequest": {
@@ -3245,6 +3285,20 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "name": {
+                        "title": "Category name",
+                        "description": "name of the Category",
+                        "type": "string",
+                        "example": "password"
+                    },
+                    "vehicle_id": {
+                        "title": "Vehicle Id",
+                        "description": "Vehicle Id",
+                        "type": "integer",
+                        "example": "1"
+                    }
+                },
                 "type": "object"
             },
             "CategoryUpdateFormRequest": {
@@ -3253,6 +3307,20 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "name": {
+                        "title": "Category name",
+                        "description": "name of the Category",
+                        "type": "string",
+                        "example": "password"
+                    },
+                    "vehicle_id": {
+                        "title": "Vehicle Id",
+                        "description": "Vehicle Id",
+                        "type": "integer",
+                        "example": "1"
+                    }
+                },
                 "type": "object"
             },
             "ForgotPasswordFormRequest": {
@@ -3335,6 +3403,62 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "settingable_id": {
+                        "title": "Model Id",
+                        "description": "Model Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "settingable_type": {
+                        "title": "Model type",
+                        "description": "Model type",
+                        "type": "string",
+                        "example": "1"
+                    },
+                    "type": {
+                        "title": "type",
+                        "description": "type",
+                        "type": "string",
+                        "example": "1"
+                    },
+                    "rate": {
+                        "title": "rate",
+                        "description": "rate",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "cap_max_rate": {
+                        "title": "cap_max_rate",
+                        "description": "cap_max_rate",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "cap_min_rate": {
+                        "title": "cap_min_rate",
+                        "description": "cap_min_rate",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "discount_amount": {
+                        "title": "discount_amount",
+                        "description": "discount_amount",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "discount_percentage": {
+                        "title": "discount_percentage",
+                        "description": "discount_percentage",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "cap": {
+                        "title": "cap",
+                        "description": "cap",
+                        "type": "integer",
+                        "example": "1"
+                    }
+                },
                 "type": "object"
             },
             "ServiceRateUpdateFormRequest": {
@@ -3343,6 +3467,62 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "settingable_id": {
+                        "title": "Model Id",
+                        "description": "Model Id",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "settingable_type": {
+                        "title": "Model type",
+                        "description": "Model type",
+                        "type": "string",
+                        "example": "1"
+                    },
+                    "type": {
+                        "title": "type",
+                        "description": "type",
+                        "type": "string",
+                        "example": "1"
+                    },
+                    "rate": {
+                        "title": "rate",
+                        "description": "rate",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "cap_max_rate": {
+                        "title": "cap_max_rate",
+                        "description": "cap_max_rate",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "cap_min_rate": {
+                        "title": "cap_min_rate",
+                        "description": "cap_min_rate",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "discount_amount": {
+                        "title": "discount_amount",
+                        "description": "discount_amount",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "discount_percentage": {
+                        "title": "discount_percentage",
+                        "description": "discount_percentage",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "cap": {
+                        "title": "cap",
+                        "description": "cap",
+                        "type": "integer",
+                        "example": "1"
+                    }
+                },
                 "type": "object"
             },
             "RydecoinPackageCreateFormRequest": {
@@ -3351,6 +3531,32 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "name": {
+                        "title": "name",
+                        "description": "name",
+                        "type": "string",
+                        "example": "1"
+                    },
+                    "rydecoin": {
+                        "title": "rydecoin",
+                        "description": "rydecoin",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "amount": {
+                        "title": "amount",
+                        "description": "amount",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "percentage": {
+                        "title": "percentage",
+                        "description": "percentage",
+                        "type": "integer",
+                        "example": "1"
+                    }
+                },
                 "type": "object"
             },
             "RydecoinPackageUpdateFormRequest": {
@@ -3359,6 +3565,32 @@
                 "required": [
                     "first_name"
                 ],
+                "properties": {
+                    "name": {
+                        "title": "name",
+                        "description": "name",
+                        "type": "string",
+                        "example": "1"
+                    },
+                    "rydecoin": {
+                        "title": "rydecoin",
+                        "description": "rydecoin",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "amount": {
+                        "title": "amount",
+                        "description": "amount",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "percentage": {
+                        "title": "percentage",
+                        "description": "percentage",
+                        "type": "integer",
+                        "example": "1"
+                    }
+                },
                 "type": "object"
             },
             "ErrandCreateFormRequest": {

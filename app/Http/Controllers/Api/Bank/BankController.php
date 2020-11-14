@@ -12,7 +12,7 @@ class BankController extends ApiController
     * @OA\Get(
     *      path="/api/v1/banks",
     *      operationId="bankLists",
-    *      tags={"bank"},
+    *      tags={"general"},
     *      summary="Get All Bank",
     *      description="Get All Bank",
     *      @OA\Response(
@@ -47,7 +47,7 @@ class BankController extends ApiController
     * @OA\Post(
     *      path="/api/v1/banks",
     *      operationId="bankCreate",
-    *      tags={"bank"},
+    *      tags={"admin"},
     *      summary="Post New Bank",
     *      description="Post New Bank",
     *      @OA\RequestBody(

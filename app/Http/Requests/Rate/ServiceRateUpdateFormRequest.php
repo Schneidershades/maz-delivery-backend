@@ -16,7 +16,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class ServiceRateUpdateFormRequest extends FormRequest
 {
     
-    /**
+     /**
      * @OA\Property(
      *      title="Model Id",
      *      description="Model Id",
@@ -38,7 +38,7 @@ class ServiceRateUpdateFormRequest extends FormRequest
      *
      * @var string
      */
-    public $settingable_id;
+    public $settingable_type;
     /**
      * @OA\Property(
      *      title="type",

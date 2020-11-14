@@ -12,7 +12,7 @@ class CategoryController extends ApiController
     * @OA\Get(
     *      path="/api/v1/categories",
     *      operationId="categoryLists",
-    *      tags={"categories"},
+    *      tags={"general"},
     *      summary="Get All Category",
     *      description="Get All Category",
     *      @OA\Response(

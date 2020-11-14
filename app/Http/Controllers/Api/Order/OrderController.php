@@ -12,7 +12,7 @@ class OrderController extends ApiController
     * @OA\Get(
     *      path="/api/v1/order",
     *      operationId="orderLists",
-    *      tags={"order"},
+    *      tags={"user"},
     *      summary="Get All Order",
     *      description="Get All Order",
     *      @OA\Response(
@@ -48,7 +48,7 @@ class OrderController extends ApiController
     * @OA\Get(
     *      path="/api/v1/order/{id}",
     *      operationId="orderDetails",
-    *      tags={"order"},
+    *      tags={"user"},
     *      summary="Show an Order",
     *      description="Show an Order",
     *      
@@ -94,7 +94,7 @@ class OrderController extends ApiController
     * @OA\Delete(
     *      path="/api/v1/order/{id}",
     *      operationId="orderDelete",
-    *      tags={"order"},
+    *      tags={"user"},
     *      summary="Delete an Order",
     *      description="Delete an Order",
     *      
