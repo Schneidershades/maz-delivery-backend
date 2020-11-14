@@ -113,7 +113,6 @@ class MobileTransactionCreateFormRequest extends FormRequest
             'bank_detail.*.number' =>'required|string',
             'bank_detail.*.save' =>'required|boolean'
 
-
             'address_id' => 'int|exists:addresses,id',
 
             'address' => 'array',
