@@ -16,8 +16,8 @@ class CreateLocalDispatchesTable extends Migration
         Schema::create('local_dispatches', function (Blueprint $table) {
             $table->id();
             $table->foreignId('service_rates_id')->nullable();
-            $table->integer('local_dispatable_id')->nullable();
-            $table->string('local_dispatable_type')->nullable();
+            $table->integer('local_dispatchable_id')->nullable();
+            $table->string('local_dispatchable_type')->nullable();
             $table->integer('quantity')->nullable();
             $table->integer('weight')->nullable();
             $table->string('note')->nullable();

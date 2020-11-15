@@ -20,4 +20,9 @@ class LocalDispatch extends Model
     {
         return $this->morphMany(Order::class, 'orderable');
     }
+
+    public function local_dispatchable()
+    {
+        return $this->morphTo();
+    }
 }

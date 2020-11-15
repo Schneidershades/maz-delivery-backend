@@ -8,6 +8,7 @@ use App\Http\Resources\Order\OrderResource;
 use App\Http\Resources\Order\OrderCollection;
 use App\Models\Payment;
 use App\Models\User;
+use App\Models\Cart;
 
 class Order extends Model
 {
@@ -19,6 +20,11 @@ class Order extends Model
     public function payments()
     {
     	return $this->hasMany(Payment::class);
+    }
+
+    public function carts()
+    {
+        return $this->hasMany(Cart::class);
     }
 
     public function user()

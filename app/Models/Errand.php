@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Http\Resources\Errand\ErrandResource;
 use App\Http\Resources\Errand\ErrandCollection;
 use App\Models\Order;
+use App\Models\ServiceRate;
 
 class Errand extends Model
 {
@@ -18,5 +19,9 @@ class Errand extends Model
     public function order()
     {
         return $this->morphMany(Order::class, 'orderable');
+    }
+    public function serviceRate()
+    {
+    	return $this->belongsTo(ServiceRate::class);
     }
 }

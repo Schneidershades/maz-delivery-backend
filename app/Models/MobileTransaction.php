@@ -19,4 +19,8 @@ class MobileTransaction extends Model
     {
         return $this->morphMany(Order::class, 'orderable');
     }
+    public function serviceRate()
+    {
+    	return $this->belongsTo(ServiceRate::class);
+    }
 }
