@@ -17,7 +17,7 @@ use App\Observers\MobileTransaction\MobileTransactionObserver;
 use App\Observers\Order\OrderObserver;
 use App\Observers\Payment\PaymentObserver;
 use App\Observers\RequestVan\RequestVanObserver;
-use App\Observers\RydecoinPackage\RydecoinPackageObserver;
+use App\Observers\Rydecoin\RydecoinPackageObserver;
 use App\Observers\ServiceRate\ServiceRateObserver;
 use App\Observers\Wallet\WalletObserver;
 use App\Models\Vehicle;
