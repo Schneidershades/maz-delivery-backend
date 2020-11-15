@@ -3606,16 +3606,14 @@
                         "type": "integer",
                         "example": "1"
                     },
-                    "address_id": {
-                        "title": "Address Id",
-                        "description": "Address Id",
-                        "type": "integer",
-                        "example": "1"
-                    },
                     "address": {
                         "type": "array",
                         "items": {
                             "properties": {
+                                "address_id": {
+                                    "type": "int",
+                                    "example": ""
+                                },
                                 "name": {
                                     "type": "string",
                                     "example": "Go to Market"
@@ -3790,16 +3788,14 @@
                         "type": "boolean",
                         "example": "false"
                     },
-                    "address_id": {
-                        "title": "Address Id",
-                        "description": "Address Id",
-                        "type": "integer",
-                        "example": "1"
-                    },
                     "address": {
                         "type": "array",
                         "items": {
                             "properties": {
+                                "address_id": {
+                                    "type": "int",
+                                    "example": "1"
+                                },
                                 "name": {
                                     "type": "string",
                                     "example": "Go to Market"
@@ -3954,6 +3950,10 @@
                         "type": "array",
                         "items": {
                             "properties": {
+                                "address_id": {
+                                    "type": "int",
+                                    "example": "1"
+                                },
                                 "name": {
                                     "type": "string",
                                     "example": "Go to Market"

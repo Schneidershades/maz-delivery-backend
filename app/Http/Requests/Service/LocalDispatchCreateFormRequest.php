@@ -129,19 +129,9 @@ class LocalDispatchCreateFormRequest extends FormRequest
     public $instant;
 
     /**
-     * @OA\Property(
-     *      title="Address Id",
-     *      description="Address Id",
-     *      example="1"
-     * )
-     *
-     * @var integer
-     */
-    public $address_id;
-
-    /**
    *        @OA\Property(property="address", type="object", type="array",
     *            @OA\Items(
+    *                @OA\Property(property="address_id", type="int", example="1"),
     *                @OA\Property(property="name", type="string", example="Go to Market"),
     *                @OA\Property(property="address", type="string", example="No 5 Jesus Street"),
     *                @OA\Property(property="phone", type="string", example="09038449333"),
@@ -184,10 +174,7 @@ class LocalDispatchCreateFormRequest extends FormRequest
             'time' => 'required|string',
             'instant' => 'required|boolean',
 
-
-            'address_id' => 'int|exists:addresses,id',
-
-            'address' => 'array',
+            'address' => 'array', 
             'address.*.name' => 'required|string',
             'address.*.address' =>'required|string',
             'address.*.phone' =>'required|string',

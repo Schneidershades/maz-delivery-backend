@@ -14,6 +14,11 @@ class MobileTransactionResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'service_rates_id' => $this->service_rates_id,
+            'type' => $this->type,
+            'amount' => $this->amount,
+        ];
     }
 }

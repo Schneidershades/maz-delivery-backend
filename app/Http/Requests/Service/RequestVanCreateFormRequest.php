@@ -43,6 +43,7 @@ class RequestVanCreateFormRequest extends FormRequest
     /**
    *        @OA\Property(property="address", type="object", type="array",
     *            @OA\Items(
+    *                @OA\Property(property="address_id", type="int", example="1"),
     *                @OA\Property(property="name", type="string", example="Go to Market"),
     *                @OA\Property(property="address", type="string", example="No 5 Jesus Street"),
     *                @OA\Property(property="phone", type="string", example="09038449333"),

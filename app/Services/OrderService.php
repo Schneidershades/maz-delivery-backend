@@ -3,6 +3,9 @@ namespace App\Services;
 
 use App\Models\Order;
 use App\Models\ServiceRate;
+use App\Models\ErrandTask;
+use App\Models\Address;
+use App\Models\Cart;
 use Illuminate\Support\Facades\Schema;
 use App\Repositories\Interfaces\OrderRepositoryInterface;
 
@@ -34,11 +37,18 @@ class OrderService implements ServiceInterface
             $order = $this->repository->find($order->id);
         }
 
+
         $item = $this->hydrateRequest($request, $order, $outsideModel);
 
         $item->save();
 
-        return $this->repository->find($item->id);
+
+        $item = $this->repository->find($item->id);
+
+        $this->other($request, $item);
+
+        return $item;
+
     }
     /**
      * @param Request $request
@@ -68,9 +78,64 @@ class OrderService implements ServiceInterface
             'orderable_type' => $outsideModel->getTable(),
             'rydecoin' => $rydecoinAmount,
             'amount' => $serviceItem->rate,
-            'user_id' => auth()->user()->id,
         ];
 
         return $this->repository->requestAndDbIntersection($request, $order, [], $item);
+    }
+
+    protected function other($request, $order)
+    {
+        if($request->has('task')){
+            foreach($request['task'] as $task){
+
+                $orderContent = [
+                    'orderable_id' => $order->id,
+                ];
+
+                $newtask = new ErrandTask;
+                $newtask = $this->repository->contentAndDbIntersection($task, $newtask, [], $orderContent);
+                $newtask->save();
+            }
+            
+        }
+
+        if($request->has('address')){
+            foreach($request['address'] as $address){
+
+                if($address['address_id']){
+                    $add = Address::find($address['address_id']);
+
+                    $cart = new Cart;
+
+                    $orderContent = [
+                        'order_id' => $order->id,
+                        'cartable_id' => $order->id,
+                        'cartable_type' => $add->getTable(),
+                        'order_of_movement' => $address['order_of_movement'],
+                    ];
+
+
+                    $ad = $this->repository->contentAndDbIntersection($address, $cart, [], $orderContent);
+                    $ad->save();
+
+                }else{
+                    $add = new Address;
+                    $add = $this->repository->contentAndDbIntersection($address, $add);
+                    $add->save();
+
+                    $cart = new Cart;
+
+                    $orderContent = [
+                        'order_id' => $order->id,
+                        'cartable_id' => $order->id,
+                        'cartable_type' => $add->getTable(),
+                        'order_of_movement' => $address['order_of_movement'],
+                    ];
+
+                    $ad = $this->repository->contentAndDbIntersection($address, $cart, [], $orderContent);
+                    $ad->save();
+                }    
+            } 
+        }
     }
 }

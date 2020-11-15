@@ -29,22 +29,10 @@ class ErrandCreateFormRequest extends FormRequest
      */
     public $service_rates_id;
 
-
-
-    /**
-     * @OA\Property(
-     *      title="Address Id",
-     *      description="Address Id",
-     *      example="1"
-     * )
-     *
-     * @var integer
-     */
-    public $address_id;
-
     /**
    *        @OA\Property(property="address", type="object", type="array",
     *            @OA\Items(
+    *                @OA\Property(property="address_id", type="int", example=""),
     *                @OA\Property(property="name", type="string", example="Go to Market"),
     *                @OA\Property(property="address", type="string", example="No 5 Jesus Street"),
     *                @OA\Property(property="phone", type="string", example="09038449333"),
@@ -59,7 +47,7 @@ class ErrandCreateFormRequest extends FormRequest
 
 
     /**
-   *        @OA\Property(property="task", type="object", type="array",
+    *       @OA\Property(property="task", type="object", type="array",
     *            @OA\Items(
     *                @OA\Property(property="name", type="string", example="Go to Market"),
     *                @OA\Property(property="phone", type="string", example="09038449333"),
@@ -103,13 +91,11 @@ class ErrandCreateFormRequest extends FormRequest
             'task.*.time' =>'required',
 
 
-            'address_id' => 'int|exists:addresses,id',
-
             'address' => 'array',
+            'address.*.address_id' => 'int|exists:addresses,id',
             'address.*.name' => 'required|string',
             'address.*.address' =>'required|string',
             'address.*.phone' =>'required|string',
-            'address.*.instructions' =>'required|string',
             'address.*.city_id' =>'required|int|exists:cities,id',
             'address.*.save' =>'required|boolean'
         ];

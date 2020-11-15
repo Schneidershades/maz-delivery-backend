@@ -20,6 +20,20 @@ class UserResource extends JsonResource
             'middle_name' => $this->middle_name,
             'last_name' => $this->last_name,
             'email' => $this->email,
+            'phone' => $this->phone,
+            'address' => $this->address,
+            'lat' => $this->lat,
+            'lng' => $this->lng,
+            'city_id' => $this->city_id,
+            'state_id' => $this->state_id,
+            'country_id' => $this->country_id,
+            'type' => $this->type,
+            'staff_id' => $this->staff_id,
+            'staff_type' => $this->staff_type,
+            'staff_vehicle_id' => $this->staff_vehicle_id,
+            'active' => $this->active,
+            'api' => $this->api,
+            'notification' => $this->notification,
 
             $this->mergeWhen($this->roles->first() != 'user', [
                 'permissions' => $this->getAllPermissions()->pluck('name')->map(function($permission){

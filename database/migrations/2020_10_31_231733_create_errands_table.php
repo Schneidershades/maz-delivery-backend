@@ -15,6 +15,7 @@ class CreateErrandsTable extends Migration
     {
         Schema::create('errands', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('service_rates_id')->nullable();
             $table->string('identifier')->nullable();
             $table->timestamps();
         });
