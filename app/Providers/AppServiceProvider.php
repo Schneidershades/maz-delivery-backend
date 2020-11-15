@@ -69,7 +69,7 @@ class AppServiceProvider extends ServiceProvider
         Order::observe(OrderObserver::class);
         Payment::observe(PaymentObserver::class);
         RequestVan::observe(RequestVanObserver::class);
-        RydecoinPackage::observe(RydecoinPackageVanObserver::class);
+        RydecoinPackage::observe(RydecoinPackageObserver::class);
         ServiceRate::observe(ServiceRateObserver::class);
         Wallet::observe(WalletObserver::class);
     }
