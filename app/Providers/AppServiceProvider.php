@@ -23,7 +23,7 @@ use App\Observers\Wallet\WalletObserver;
 use App\Models\Vehicle;
 use App\Models\User;
 use App\Models\Address;
-use App\Models\Bank;
+use App\Models\BankDetail;
 use App\Models\Cart;
 use App\Models\Errand;
 use App\Models\ErrandTask;
@@ -59,7 +59,7 @@ class AppServiceProvider extends ServiceProvider
         User::observe(UserObserver::class);
         Vehicle::observe(VehicleObserver::class);
         Address::observe(AddressObserver::class);
-        Bank::observe(BankObserver::class);
+        BankDetail::observe(BankDetailObserver::class);
         Cart::observe(CartObserver::class);
         Errand::observe(ErrandObserver::class);
         ErrandTask::observe(ErrandTaskObserver::class);
