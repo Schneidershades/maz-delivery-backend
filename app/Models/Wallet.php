@@ -15,12 +15,8 @@ class Wallet extends Model
     public $oneItem = WalletResource::class;
     public $allItems = WalletCollection::class;
 
-
-
     public function user()
     {
     	return $this->belongsTo(User::class);
     }
-
-
 }
