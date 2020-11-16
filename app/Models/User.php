@@ -11,6 +11,7 @@ use App\Http\Resources\User\UserResource;
 use App\Http\Resources\User\UserCollection;
 use App\Models\BankDetail;
 use App\Models\Address;
+use App\Models\Wallet;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
@@ -67,5 +68,10 @@ class User extends Authenticatable implements JWTSubject
     public function bankDetails()
     {
         return $this->hasMany(BankDetail::class);
+    }
+
+    public function wallet()
+    {
+        return $this->hasOne(Wallet::class);
     }
 }
