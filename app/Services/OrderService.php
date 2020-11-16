@@ -102,7 +102,7 @@ class OrderService implements ServiceInterface
         if($request->has('address')){
             foreach($request['address'] as $address){
 
-                if($address['address_id']){
+                if(array_key_exists('address_id', $address)){
                     $add = Address::find($address['address_id']);
 
                     $cart = new Cart;
