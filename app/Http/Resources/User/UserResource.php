@@ -38,7 +38,7 @@ class UserResource extends JsonResource
             'api' => $this->api,
             'notification' => $this->notification,
 
-            'bankDetails' => BankDetailsResource::collection($this->bankDetails),
+            'bankDetails' => BankDetailResource::collection($this->bankDetails),
             'addresses' => AddressResource::collection($this->addresses),
             'wallet' => WalletResource::collection($this->wallet),
 
