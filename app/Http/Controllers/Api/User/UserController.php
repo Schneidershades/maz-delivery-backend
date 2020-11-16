@@ -54,7 +54,7 @@ class UserController extends ApiController
         
         $token = JWTAuth::attempt($request->only('email', 'password'));
 
-        return $this->showOne(auth()->user());
+        return $this->respondWithToken($token);
     }
 
     /**
@@ -95,8 +95,7 @@ class UserController extends ApiController
         if(!$token = JWTAuth::attempt($request->only('email', 'password'))){
             return $this->authErrorResponse('Could not sign you in with those details', 401);
         }
-
-        return $this->showOne(auth()->user());
+        return $this->respondWithToken($token);
     }
 
 
