@@ -78,10 +78,19 @@ class PaymentController extends ApiController
     */
     public function store(PaymentCreateFormRequest $request)
     {
-        $model = new Payment;
-        $model = $this->requestAndDbIntersection($request, $model);
-        $model = $model->save();
-        return $this->showMessage('Payment Saved');
+        // $model = new Payment;
+
+        // $resp = Flutterwave::verifyTransaction($request->payment_reference);
+
+        // $model = $this->repository->findFirstByArray(['receipt_number' => $resp['orderId']]);
+
+        // $model = $this->repository->requestAndDbIntersection($request, $model, [], $resp);
+
+        // $model = $this->repository->save($model);
+
+        // $model = $this->repository->findFirstByArray(['receipt_number' => $resp['orderId']]);
+
+        // return $this->showOne($model);
     }
 
 
