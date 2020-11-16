@@ -38,15 +38,15 @@ class UserResource extends JsonResource
             'api' => $this->api,
             'notification' => $this->notification,
 
-            'bankDetails' => BankDetailResource::collection($this->bankDetails),
-            'addresses' => AddressResource::collection($this->addresses),
-            'wallet' => WalletResource::collection($this->wallet),
+            // 'bankDetails' => BankDetailResource::collection($this->bankDetails),
+            // 'addresses' => AddressResource::collection($this->addresses),
+            // 'wallet' => WalletResource::collection($this->wallet),
 
-            $this->mergeWhen($this->roles->first() != 'user', [
-                'permissions' => $this->getAllPermissions()->pluck('name')->map(function($permission){
-                    return explode('_', $permission);
-                })->toArray(),
-            ]),
+            // $this->mergeWhen($this->roles->first() != 'user', [
+            //     'permissions' => $this->getAllPermissions()->pluck('name')->map(function($permission){
+            //         return explode('_', $permission);
+            //     })->toArray(),
+            // ]),
         ];
     }
 }
