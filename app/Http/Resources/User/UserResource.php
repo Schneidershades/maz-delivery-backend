@@ -38,7 +38,7 @@ class UserResource extends JsonResource
 
             'bankDetails' => BankDetailResource::collection($this->bankDetails),
             'addresses' => AddressResource::collection($this->addresses),
-            'wallet' => $this->wallet,
+            'wallet' => WalletResource::collection($this->wallet),
 
             $this->mergeWhen($this->roles->first() != 'user', [
                 'permissions' => $this->getAllPermissions()->pluck('name')->map(function($permission){
