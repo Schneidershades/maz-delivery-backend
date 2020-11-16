@@ -3,7 +3,7 @@
 namespace App\Http\Resources\User;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\Bank\BankDetailsResource;
+use App\Http\Resources\Bank\BankDetailResource;
 use App\Http\Resources\Address\AddressResource;
 use App\Http\Resources\Wallet\WalletResource;
 
